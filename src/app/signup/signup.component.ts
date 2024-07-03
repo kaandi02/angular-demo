@@ -3,6 +3,7 @@ import {FormGroup,FormControl,Validators,AbstractControl, ValidatorFn} from '@an
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { User } from '../Models/User';
+import { AppState } from '../store/app.state';
 
 import { signup } from './state/signup.actions';
 import { UserState } from './state/signup.state';
@@ -15,7 +16,7 @@ import { UserState } from './state/signup.state';
 export class SignupComponent {
   loginForm!:FormGroup;
   signupUsers:User[]=[];
-  constructor(private store:Store<{signup:UserState}>,private router:Router){}
+  constructor(private store:Store<AppState>,private router:Router){}
   ngOnInit(){
     this.loginForm=new FormGroup({
       email:new FormControl('',[Validators.required,Validators.email]),

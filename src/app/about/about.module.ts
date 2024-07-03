@@ -4,14 +4,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from '../home/footer/footer.component';
 import { NavbarComponent } from '../home/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
-import { FavouriteComponent } from './favourite.component';
+import { AboutComponent } from './about.component';
 
 
-const routes: Routes = [{ path: '', component: FavouriteComponent }];
+const routes: Routes = [{ path: '', component: AboutComponent }];
 
 @NgModule({
-  declarations:[FavouriteComponent],
-  imports: [RouterModule.forChild(routes),CommonModule,SharedModule],
+  declarations: [AboutComponent],
+  imports: [RouterModule.forChild(routes), CommonModule, SharedModule],
   exports: [RouterModule],
 })
-export class FavouriteModule {}
+export class AboutModule {}

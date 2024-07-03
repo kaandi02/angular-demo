@@ -13,83 +13,59 @@ import { SignupComponent } from './signup/signup.component';
 import { SingleproductComponent } from './singleproduct/singleproduct.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'products/:id', component: SingleproductComponent },
-  { path: 'cart', component: CartComponent },
-  { path: 'favourite', component: FavouriteComponent },
-  { path: 'checkout', component: CheckoutComponent },
-  {path:'about',component:AboutComponent}
+  // { path: '', component: HomeComponent },
+  // { path: 'login', component: LoginComponent },
+  // { path: 'signup', component: SignupComponent },
+  // { path: 'products/:id', component: SingleproductComponent },
+  // { path: 'cart', component: CartComponent },
+  // { path: 'favourite', component: FavouriteComponent },
+  // { path: 'checkout', component: CheckoutComponent },
+  // {path:'about',component:AboutComponent},
  
 
-  // {
-  //   path: '',
-  //   loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-  // },
-  // {
-  //   path: 'login',
-  //   loadChildren: () =>
-  //     import('./login/login.module').then((m) => m.LoginModule),
-  // },
-  // {
-  //   path: 'signup',
-  //   loadChildren: () =>
-  //     import('./signup/signup.module').then((m) => m.SignupModule),
-  // },
-  // {
-  //   path: 'products/:id',
-  //   loadChildren: () =>
-  //     import('./singleproduct/singleproduct.module').then(
-  //       (m) => m.SingleProductModule
-  //     ),
-  // },
-  // {
-  //   path: 'cart',
-  //   loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule),
-  // },
-  // {
-  //   path: 'favourite',
-  //   loadChildren: () =>
-  //     import('./favourite/favourite.module').then((m) => m.FavouriteModule),
-  // },
-  // {
-  //   path: 'checkout',
-  //   loadChildren: () =>
-  //     import('./checkout/checkout.module').then((m) => m.CheckoutModule),
-  // },
+  {
+    path: '',
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: 'signup',
+    loadChildren: () =>
+      import('./signup/signup.module').then((m) => m.SignupModule),
+  },
+  {
+    path: 'products/:id',
+    loadChildren: () =>
+      import('./singleproduct/singleproduct.module').then(
+        (m) => m.SingleProductModule
+      ),
+  },
+  {
+    path: 'cart',
+    loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule),
+  },
+  {
+    path: 'favourite',
+    loadChildren: () =>
+      import('./favourite/favourite.module').then((m) => m.FavouriteModule),
+  },
+  {
+    path: 'checkout',
+    loadChildren: () =>
+      import('./checkout/checkout.module').then((m) => m.CheckoutModule),
+  },
 
-  // { path: '', component: HomeComponent },
-  // {
-  //   path: 'login',
-  //   loadChildren: () =>
-  //     import('./login/login.module').then((m) => m.LoginModule),
-  // },
-  // {
-  //   path: 'signup',
-  //   loadChildren: () =>
-  //     import('./signup/signup.module').then((m) => m.SignupModule),
-  // },
-  // { path: 'products/:id', component: SingleproductComponent },
-  // {
-  //   path: 'cart',
-  //   loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule),
-  // },
-  // {
-  //   path: 'favourite',
-  //   loadChildren: () =>
-  //     import('./favourite/favourite.module').then((m) => m.FavouriteModule),
-  // },
-  // {
-  //   path: 'checkout',
-  //   loadChildren: () =>
-  //     import('./checkout/checkout.module').then((m) => m.CheckoutModule),
-  // },
-  // {
-  //   path: 'search',
-  //   loadChildren: () =>
-  //     import('./search/search.module').then((m) => m.SearchModule),
-  // },
+ 
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('./about/about.module').then((m) => m.AboutModule),
+  },
+
 ];
 
 @NgModule({

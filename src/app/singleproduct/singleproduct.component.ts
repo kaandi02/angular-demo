@@ -13,6 +13,7 @@ import { getCartItems } from '../cart/state/cart.selector';
 import { LoginState } from '../login/state/login.state';
 import { getIsLoggedIn } from '../login/state/login.selector';
 import { loginAction } from '../login/state/login.actions';
+import { AppState } from '../store/app.state';
 
 
 
@@ -28,10 +29,9 @@ export class SingleproductComponent {
   loggedIn!: boolean;
   constructor(
     private router: ActivatedRoute,
-    private store: Store<productsState>,
+    private store: Store<AppState>,
     private route: Router,
-    private cartStore: Store<CartState>,
-    private loginstore:Store<LoginState>
+    
   ) {
     this.product$ = this.store.select(getProducts).pipe(
       map((products) => {
@@ -45,11 +45,11 @@ export class SingleproductComponent {
   }
   
   addToCart(product: featuredProducts, quantity: number) {
-     this.loginstore.select(getIsLoggedIn).subscribe(data=>this.loggedIn=data);
+     this.store.select(getIsLoggedIn).subscribe(data=>this.loggedIn=data);
     console.log(this.loggedIn )
     if (this.loggedIn) {
         console.log(this.loggedIn);
-      this.cartStore.dispatch(cartAction({ product, quantity }));
+      this.store.dispatch(cartAction({ product, quantity }));
       alert('Product added to cart successfully');
       this.route.navigate(['/cart']);
       

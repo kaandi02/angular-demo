@@ -6,6 +6,7 @@ import { CartState } from '../cart/state/cart.state';
 import { getIsLoggedIn } from '../login/state/login.selector';
 import { LoginState } from '../login/state/login.state';
 import { featuredProducts } from '../Models/FeaturedProducts';
+import { AppState } from '../store/app.state';
 import { removefavourite } from './state/favourite.actions';
 import { getFavourites } from './state/favourite.selector';
 import { favouriteState } from './state/favourite.state';
@@ -20,18 +21,19 @@ export class FavouriteComponent {
   products$!: Observable<featuredProducts[]>;
   isLoggedin!: Observable<boolean>;
 
-  constructor(private store: Store<favouriteState>,private cartStore:Store<CartState>,private loginStore:Store<LoginState>) {
+  constructor(private store: Store<AppState>) {
     this.products$ = this.store.select(getFavourites);
 
   }
-  addToCart(product: featuredProducts,quantity:number) {
-    this.cartStore.dispatch(cartAction({product,quantity}))
+  addToCart(product: featuredProducts, quantity: number) {
+
+  this.store.dispatch(cartAction({product,quantity}))
   }
   removeFromFav(product: featuredProducts) {
     this.store.dispatch(removefavourite({product}))
   }
   ngOnInit() {
-    this.isLoggedin=this.loginStore.select(getIsLoggedIn)
+    this.isLoggedin=this.store.select(getIsLoggedIn)
   }
   
 

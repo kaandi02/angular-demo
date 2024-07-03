@@ -3,6 +3,7 @@ import {FormGroup,FormControl,Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { User } from '../Models/User';
+import { AppState } from '../store/app.state';
 import { loginAction } from './state/login.actions';
 import { getIsLoggedIn } from './state/login.selector';
 import { LoginState } from './state/login.state';
@@ -14,7 +15,7 @@ import { LoginState } from './state/login.state';
 })
 export class LoginComponent {
   loginForm!:FormGroup;
-  constructor(private router:Router,private store:Store<LoginState>){
+  constructor(private router:Router,private store:Store<AppState>){
     
   }
   ngOnInit(){

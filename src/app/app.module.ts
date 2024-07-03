@@ -36,28 +36,24 @@ import { favouriteReducer } from './favourite/state/favourite.reducer';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
+import { appReducer } from './store/app.state';
+import { SharedModule } from './shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    SignupComponent,
    
-    HomeComponent,
-    FavouriteComponent,
+  
+   
     
-    NavbarComponent,
-    HeroComponent,
-    FeaturedproductsComponent,
-    FooterComponent,
-    SingleproductComponent,
-    CartComponent,
+ 
+  
     
    
-    CheckoutComponent,
-               AboutComponent,
+    
+   
   
   ],
   imports: [
@@ -71,15 +67,10 @@ import { AboutComponent } from './about/about.component';
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    StoreModule.forRoot({
-      signup: signupReducer,
-      login: loginReducer,
-      products: productsReducer,
-      cart: cartReducer,
-      favourite: favouriteReducer,
-    }),
+    StoreModule.forRoot(appReducer),
     EffectsModule.forRoot([ProductEffects]),
     FormsModule,
+    SharedModule
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],

@@ -15,7 +15,6 @@ const routes: Routes = [{ path: '', component: CheckoutComponent }];
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
   ],

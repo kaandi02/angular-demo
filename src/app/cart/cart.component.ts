@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { map, Observable, of, Subscription } from 'rxjs';
 
 import { featuredProducts } from '../Models/FeaturedProducts';
+import { AppState } from '../store/app.state';
 import { cartAction, quantityAction, removeCart, totalQuantity } from './state/cart.actions';
 import { getCartItems } from './state/cart.selector';
 import { CartState } from './state/cart.state';
@@ -21,7 +22,7 @@ export class CartComponent {
 
   // localProducts!: featuredProducts[];
 
-  constructor(private store: Store<CartState>,private router:Router) {
+  constructor(private store: Store<AppState>,private router:Router) {
     this.product$ = this.store.select(getCartItems);
     this.product$
       .pipe(

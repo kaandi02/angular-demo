@@ -13,6 +13,7 @@ import { favouriteState } from '../../favourite/state/favourite.state';
 import { getIsLoggedIn } from '../../login/state/login.selector';
 import { LoginState } from '../../login/state/login.state';
 import { featuredProducts } from '../../Models/FeaturedProducts';
+import { AppState } from '../../store/app.state';
 
 import { loadProducts } from './state/products.action';
 import { getFilteredProducts, getProducts } from './state/products.selector';
@@ -29,11 +30,10 @@ export class FeaturedproductsComponent {
   isFav!: boolean;
 
   constructor(
-    private store: Store<productsState>,
-    private favstore: Store<favouriteState>,
+    private store: Store<AppState>,
+    
     private route: Router,
-    private cartStore: Store<CartState>,
-    private loginStore: Store<LoginState>
+    
   ) {
     this.products$ = this.store.select(getFilteredProducts).pipe(
       // tap((products) => console.log('Products from store:', products)),
@@ -43,7 +43,7 @@ export class FeaturedproductsComponent {
 
   ngOnInit() {
     this.store.dispatch(loadProducts());
-    this.loginStore
+    this.store
       .select(getIsLoggedIn)
       .subscribe((data) => (this.login = data));
   }
@@ -53,7 +53,7 @@ export class FeaturedproductsComponent {
   toggleFav(product: featuredProducts) {
     if (this.login) {
       
-        this.favstore.dispatch(favouriteAction({ product }));
+        this.store.dispatch(favouriteAction({ product }));
       }
     else {
       alert('Login to continue');
@@ -61,7 +61,7 @@ export class FeaturedproductsComponent {
   }
   addToCart(product: featuredProducts, quantity: number) {
     if (this.login) {
-      this.cartStore.dispatch(cartAction({ product, quantity }));
+      this.store.dispatch(cartAction({ product, quantity }));
     } else {
       alert('Login To Continue');
       this.route.navigate(['/login']);

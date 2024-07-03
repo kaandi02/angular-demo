@@ -9,6 +9,7 @@ import { logoutAction } from '../../login/state/login.actions';
 import { getIsLoggedIn } from '../../login/state/login.selector';
 import { LoginState } from '../../login/state/login.state';
 import { featuredProducts } from '../../Models/FeaturedProducts';
+import { AppState } from '../../store/app.state';
 import { searchProducts } from '../featuredproducts/state/products.action';
 import { productsState } from '../featuredproducts/state/products.state';
 
@@ -23,13 +24,13 @@ export class NavbarComponent {
   cartItems!: featuredProducts[];
   favItems!: featuredProducts[];
 
-  constructor(private store: Store<LoginState>, private router: Router,private productsstore:Store<productsState>,private cartStore:Store<CartState>,private favStore:Store<favouriteState>) {}
+  constructor(private store: Store<AppState>, private router: Router) {}
   ngOnInit() {
     this.store
       .select(getIsLoggedIn)
       .subscribe((data) => (this.isLoggedin = data));
-    this.cartStore.select(getCartItems).subscribe(data => this.cartItems = data);
-    this.favStore.select(getFavourites).subscribe(data => this.favItems = data);
+    this.store.select(getCartItems).subscribe(data => this.cartItems = data);
+    this.store.select(getFavourites).subscribe(data => this.favItems = data);
       
     
  
