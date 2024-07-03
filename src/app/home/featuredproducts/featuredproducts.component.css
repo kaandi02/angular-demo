@@ -92,7 +92,11 @@
 .pro-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 20px;
+       
+        padding: 20px;
+        margin-left: 20px;
 }
 .button{
     
@@ -104,6 +108,10 @@
         
        padding:10px ;
         margin-bottom: 20px;
-        text-align: left;
+       
+        text-align: center;
         
+}
+.button:hover{
+    cursor: pointer;
 }

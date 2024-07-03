@@ -16,15 +16,13 @@
                 <h4>${{product.price}}</h4>
 
             </div>
-            <button class="button" (click)="addToCart(product,1)">Cart</button>
+            <button class="button" (click)="toggleFav(product)">Wishlist
+            </button>
+            <i class="fas fa-shopping-cart" (click)="addToCart(product,1)"></i>
 
-            <ng-container *ngIf="product.isFav;then fav;else nofav"></ng-container>
-            <ng-template #nofav>
-                <i  class="fa-solid fa-heart" (click)="toggleFav(product)"></i>
-            </ng-template>
-            <ng-template #fav>
-                <h3 (click)="toggleFav(product)" (click)="toggleFav(product)">❤️</h3>
-            </ng-template>
+           
+
+         
         </div>
     </div>
 </div>

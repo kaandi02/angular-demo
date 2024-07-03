@@ -52,15 +52,17 @@ export class FeaturedproductsComponent {
   }
   toggleFav(product: featuredProducts) {
     if (this.login) {
-      
+        alert('Product added to wishlist')
         this.store.dispatch(favouriteAction({ product }));
       }
     else {
       alert('Login to continue');
+      this.route.navigate(['/login']);
     }
   }
   addToCart(product: featuredProducts, quantity: number) {
     if (this.login) {
+      alert('Product added to cart successfully')
       this.store.dispatch(cartAction({ product, quantity }));
     } else {
       alert('Login To Continue');
