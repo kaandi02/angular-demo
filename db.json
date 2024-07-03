@@ -1,0 +1,160 @@
+{
+  "products": [
+    { "id":1,
+      "image": "./assets/images/products/f1.jpg",
+      "brand": "adidas",
+      "description": "Cartoon Floral T-Shirt",
+      "rating": "5",
+      "price": 7,
+      
+      "details":"versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    
+    },
+    {
+      "id": 2,
+      "image": "./assets/images/products/f2.jpg",
+      "brand": "adidas",
+      "description": "Cartoon Floral T-Shirt",
+      "rating": 5,
+      "price": 8,
+      
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+    {
+      "id": 3,
+      "image": "./assets/images/products/f3.jpg",
+      "brand": "adidas",
+      "description": "Cartoon Floral T-Shirt",
+      "rating": 5,
+      "price": 5,
+      
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+    {
+      "id": 4,
+      "image": "./assets/images/products/f4.jpg",
+      "brand": "adidas",
+      "description": "Cartoon Floral T-Shirt",
+      "rating": 5,
+      "price": 7,
+      
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+    {
+      "id": 5,
+      "image": "./assets/images/products/f5.jpg",
+      "brand": "adidas",
+      "description": "Cartoon Floral T-Shirt",
+      "rating": 5,
+      "price": 9,
+      
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+    {
+      "id": 6,
+      "image": "./assets/images/products/f6.jpg",
+      "brand": "adidas",
+      "description": "Blazer and T-Shirt",
+      "rating": 5,
+      "price": 12,
+      
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+    {
+      "id": 7,
+      "image": "./assets/images/products/f7.jpg",
+      "brand": "adidas",
+      "description": "Embroidery trouser",
+      "rating": 5,
+      "price": 7,
+      
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+    {
+      "id": 8,
+      "image": "./assets/images/products/f8.jpg",
+      "brand": "adidas",
+      "description": "Wide neck T-shirt",
+      "rating": 5,
+      "price": 7,
+    
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+    {
+      "id": 9,
+      "image": "./assets/images/products/n1.jpg",
+      "brand": "adidas",
+      "description": "Formal Shirt",
+      "rating": 5,
+      "price": 12,
+      
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+    {
+      "id": 10,
+      "image": "./assets/images/products/n2.jpg",
+      "brand": "adidas",
+      "description": "Formal Shirt",
+      "rating": 5,
+      "price": 12,
+      
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+    {
+      "id": 11,
+      "image": "./assets/images/products/n3.jpg",
+      "brand": "adidas",
+      "description": "Formal Shirt",
+      "rating": 5,
+      "price": 12,
+      
+      "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+    },
+     {
+       "id": 12,
+       "image": "./assets/images/products/n4.jpg",
+       "brand": "adidas",
+       "description": "Formal Shirt",
+       "rating": 5,
+       "price": 12,
+       
+       "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+     }, {
+       "id": 13,
+       "image": "./assets/images/products/n5.jpg",
+       "brand": "adidas",
+       "description": "Formal Shirt",
+       "rating": 5,
+       "price": 12,
+       
+       "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+     }, {
+       "id": 14,
+       "image": "./assets/images/products/n6.jpg",
+       "brand": "adidas",
+       "description": "Cotton Trousers",
+       "rating": 5,
+       "price": 3,
+       
+       "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+     }, {
+       "id": 15,
+       "image": "./assets/images/products/n7.jpg",
+       "brand": "adidas",
+       "description": "Formal Shirt",
+       "rating": 5,
+       "price": 12,
+       
+       "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+     }, {
+       "id": 16,
+       "image": "./assets/images/products/n8.jpg",
+       "brand": "adidas",
+       "description": "Formal Shirt",
+       "rating": 5,
+       "price": 12,
+    
+       "details": "versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
+     }
+  ]
+}

@@ -1,0 +1,129 @@
+.cart {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f4f4f4;
+}
+.span{
+    margin-left: 10px;
+}
+.span:hover{
+    cursor:pointer
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+td img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+}
+
+td button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background-color: #ff1a1a;
+}
+
+@media (max-width: 768px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    th {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+#subtotal{
+    width:50%;
+    margin-bottom: 30px;
+    border:1px solid #e2e9e1;
+    padding:30px;
+    margin-left: 25%;
+}
+#subtotal table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#subtotal table td{
+    width: 50%;
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 13px;
+}
+#subtotal button{
+    color: white;
+        background-color: rgb(0, 98, 98);
+        border: none;
+        width: 30%;
+        padding: 10px;
+        margin-bottom: 20px;
+}
+.no-fav-content {
+    text-align: center;
+    padding: 50px;
+
+
+    margin: 20px 0;
+}
+
+.no-fav-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.no-fav-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}

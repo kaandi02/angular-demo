@@ -1,0 +1,30 @@
+<div id="product1">
+    <h2>Featured Products</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="pro-container">
+        <div class="pro" *ngFor="let product of products$ | async">
+            <img [src]="product.image" [routerLink]="'/products/'+product.id" />
+            <div class="des">
+                <span>{{product.brand}}</span>
+                <h5>{{product.description}}</h5>
+
+                <div class="star">
+                    <ng-container *ngFor="let star of generateStars(product.rating)">
+                        <span>⭐</span>
+                    </ng-container>
+                </div>
+                <h4>${{product.price}}</h4>
+
+            </div>
+            <button class="button" (click)="addToCart(product,1)">Cart</button>
+
+            <ng-container *ngIf="product.isFav;then fav;else nofav"></ng-container>
+            <ng-template #nofav>
+                <i  class="fa-solid fa-heart" (click)="toggleFav(product)"></i>
+            </ng-template>
+            <ng-template #fav>
+                <h3 (click)="toggleFav(product)" (click)="toggleFav(product)">❤️</h3>
+            </ng-template>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<!-- <div *ngIf="product$ | async as product">
+    <h1>{{ product.id}}</h1>
+   
+</div> -->
+<app-navbar></app-navbar>
+
+<div id="prodetails" *ngIf="product$ | async as product">
+    <div class="section1">
+        <img [src]="product?.image"/>
+    </div>
+    <div class="section2">
+        <h3>{{product.description}}</h3>
+       <strong> <h1>${{product.price}}</h1></strong>
+       <div class="option">
+        <select>
+            <option>Select Size</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+            <option>XXL</option>
+        </select>
+        <input type="number" value="1" [(ngModel)]="value" /></div>
+        <button class="button"  (click)="addToCart(product,value)">Add To Cart</button>
+        <h3>Product Details</h3>
+        <p>{{product.details}}</p>
+    </div>
+</div>
+<app-footer></app-footer>

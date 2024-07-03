@@ -1,0 +1,84 @@
+<div class="container">
+    <h1>Checkout</h1>
+   
+    <form id="checkout-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="con">
+     
+
+        <h1>Billing Address</h1>
+        <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="fullName"  class="form-control" formControlName="name">
+            <div *ngIf="loginForm.get('name')?.touched && !loginForm.get('name')?.valid" class="validationdiv">
+                <div>Name is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" formControlName="email" >
+            <div *ngIf="loginForm.get('email')?.touched && !loginForm.get('email')?.valid" class="validationdiv">
+                <div *ngIf="loginForm.get('email')?.errors?.['required']">Email Is Required</div>
+                <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid Email</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address"class="form-control" formControlName="address">
+            <div *ngIf="loginForm.get('address')?.touched && !loginForm.get('address')?.valid" class="validationdiv">
+                <div>Address is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" class="form-control" formControlName="city">
+            <div *ngIf="loginForm.get('city')?.touched && !loginForm.get('city')?.valid" class="validationdiv">
+                <div>City is required</div>
+            </div>
+        </div>
+
+        
+        
+       <h1>Payment</h1>
+        <div class="form-group">
+            <label for="card-name">Name on Card</label>
+            <input type="text" id="card-name" class="form-control" formControlName="cardname">
+            <div *ngIf="loginForm.get('cardname')?.touched && !loginForm.get('cardname')?.valid" class="validationdiv">
+                <div>CardName is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" class="form-control" formControlName="cardNumber">
+            <div *ngIf="loginForm.get('cardNumber')?.touched && !loginForm.get('cardNumber')?.valid" class="validationdiv">
+                <div *ngIf="loginForm.get('cardNumber')?.errors?.['required']">Cardnumber is required</div>
+                <div *ngIf="loginForm.get('cardNumber')?.errors?.['maxlength']">Must be 16 digits</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exp-date">Expiration Date</label>
+            <input type="text" id="exp-date"  placeholder="MM/YY" class="form-control" formControlName="expiration">
+            <div *ngIf="loginForm.get('expiration')?.touched && !loginForm.get('expiration')?.valid" class="validationdiv">
+                <div>Expiration Date is required</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" class="form-control" formControlName="cvv">
+            <div *ngIf="loginForm.get('cvv')?.touched && !loginForm.get('cvv')?.valid" class="validationdiv">
+                <div *ngIf="loginForm.get('cvv')?.errors?.['required']">CVV is required</div>
+                <div *ngIf="loginForm.get('cvv')?.errors?.['maxlength']">enter only 3 numbers</div>
+            </div>
+        </div>
+        </div>
+        
+
+    <button [ngClass]="{'button':loginForm.valid,'disabled':!loginForm.valid}" type="submit"
+        [disabled]="!loginForm.valid">Submit</button>
+    </form>
+</div>

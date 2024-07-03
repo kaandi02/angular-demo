@@ -1,0 +1,30 @@
+   <app-navbar></app-navbar><div class="header">
+    <div *ngIf="products$ | async; else nofav">
+    <h1>My Wishlist <i class="fa-regular fa-heart"></i> </h1>
+    <div class="pro-container">
+        <div class="pro" *ngFor="let product of products$ | async">
+            <img [src]="product.image" [routerLink]="'/products/'+product.id"/>
+            <button class="button" (click)="removeFromFav(product)">X</button>
+            <div class="content">
+                    
+                    <h3>{{product.brand}}-${{product.price}}</h3>
+                    
+               
+             
+                    <button (click)="addToCart(product,1)">Add to cart</button>
+                    
+                
+               
+            </div>
+        </div>
+    </div>
+    </div>
+    <ng-template #nofav>
+        <div class="no-fav-content">
+            <h2>No favourites added yet</h2>
+            <p>Explore our shop and add your favorite products.</p>
+            <a [routerLink]="'/'" class="explore-button">Start Exploring</a>
+        </div>
+    </ng-template>
+    <app-footer></app-footer>
+
