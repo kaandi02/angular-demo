@@ -34,7 +34,7 @@ export class FeaturedproductsComponent {
   }
 
   ngOnInit() {
-    this.store.dispatch(loadProducts());
+ 
     this.store.select(getIsLoggedIn).subscribe((data) => (this.login = data));
   }
   generateStars(rating: number): number[] {
