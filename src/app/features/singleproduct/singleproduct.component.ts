@@ -9,6 +9,7 @@ import { loadProducts } from '../../store/featured-products/products.action';
 import { cartAction } from '../../store/cart/cart.actions';
 import { getIsLoggedIn } from '../../store/login/login.selector';
 import { AppState } from '../../app.state';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-singleproduct',
@@ -23,7 +24,8 @@ export class SingleproductComponent {
   constructor(
     private router: ActivatedRoute,
     private store: Store<AppState>,
-    private route: Router
+    private route: Router,
+    private snackBar: MatSnackBar
   ) {
     this.product$ = this.store.select(getProducts).pipe(
       map((products) => {
@@ -45,9 +47,15 @@ export class SingleproductComponent {
       console.log(this.loggedIn);
       this.store.dispatch(cartAction({ product, quantity }));
       alert('Product added to cart successfully');
+      this.snackBar.open('Product added to cart successfully', 'Close', {
+        duration: 3000,
+      });
       this.route.navigate(['/cart']);
     } else {
       alert('Login to continue');
+      this.snackBar.open('Login to continue', 'Close', {
+        duration: 3000,
+      });
       this.route.navigate(['/login']);
     }
   }
