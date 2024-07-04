@@ -13,12 +13,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { ProductEffects } from './home/featuredproducts/state/products.effects';
-import { HttpClientModule } from '@angular/common/http';
+import { ProductEffects } from './store/featured-products/products.effects';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { appReducer } from './store/app.state';
+import { appReducer } from './app.state';
 import { SharedModule } from './shared/shared.module';
-import { ErrorComponent } from './error/error.component';
+import { ErrorComponent } from './features/error/error.component';
+import { ProductsService } from './Services/products.service';
+import { ApiInterceptor } from './interceptor/api.interceptor';
 
 @NgModule({
   declarations: [AppComponent, ErrorComponent],
@@ -38,7 +40,16 @@ import { ErrorComponent } from './error/error.component';
     FormsModule,
     SharedModule,
   ],
-  providers: [provideClientHydration(), provideAnimationsAsync()],
+  providers: [
+    provideClientHydration(),
+    provideAnimationsAsync(),
+    ProductsService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
