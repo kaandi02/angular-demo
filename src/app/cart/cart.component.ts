@@ -6,7 +6,12 @@ import { map, Observable, of, Subscription } from 'rxjs';
 
 import { featuredProducts } from '../Models/FeaturedProducts';
 import { AppState } from '../store/app.state';
-import { cartAction, quantityAction, removeCart, totalQuantity } from './state/cart.actions';
+import {
+  cartAction,
+  quantityAction,
+  removeCart,
+  totalQuantity,
+} from './state/cart.actions';
 import { getCartItems } from './state/cart.selector';
 import { CartState } from './state/cart.state';
 
@@ -19,10 +24,7 @@ export class CartComponent {
   product$!: Observable<featuredProducts[] | null>;
   totalPrice!: number | undefined;
   totalQuantity!: number | undefined;
-
-  // localProducts!: featuredProducts[];
-
-  constructor(private store: Store<AppState>,private router:Router) {
+  constructor(private store: Store<AppState>, private router: Router) {
     this.product$ = this.store.select(getCartItems);
     this.product$
       .pipe(
@@ -48,35 +50,10 @@ export class CartComponent {
       .subscribe((totals) => {
         this.totalPrice = totals?.totalPrice;
         this.totalQuantity = totals?.totalQuantity;
-        // Perform further actions with the total price and total quantity
       });
-    
-
-    // this.product$
-    //   .pipe(
-    //     map((products) => {
-    //       return products?.map((product) => product.price * product.quantity);
-    //     }),
-    //     map((prices) => prices?.reduce((total, price) => total + price, 0))
-    //   )
-    //   .subscribe((totalPrice) => {
-    //     this.totalPrice = totalPrice;
-    //     // Perform further actions with the total price
-    //   });
-
-    // const localProductsString = localStorage.getItem('cartProducts');
-    // if (localProductsString) {
-    //   this.localProducts = JSON.parse(localProductsString);
-    // }
-    //  const localProductsQuantity = localStorage.getItem('cartQuantity');
-    //  if (localProductsQuantity) {
-    //    this.quantity = JSON.parse(localProductsQuantity);
-    //  }
   }
 
   removeCart(product: featuredProducts) {
-    //   this.localProducts = this.localProducts.filter((p) => p.id !== product.id);
-    //   localStorage.setItem('cartProducts', JSON.stringify(this.localProducts));
     this.store.dispatch(removeCart({ product }));
   }
 
@@ -93,9 +70,7 @@ export class CartComponent {
     );
   }
   checkout() {
-    this.router.navigate(['/checkout'])
-  
-    
+    this.router.navigate(['/checkout']);
   }
   ngOnInit() {}
 }

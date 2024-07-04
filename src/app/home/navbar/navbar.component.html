@@ -1,50 +1,19 @@
-<!-- <div id="header">
-    <a href="#"><img src="../../../assets/images/logo.png" id="image" /></a>
-    <div class="search"><input type="text" placeholder="search" [(ngModel)]="searchInput" />
-    <i class="fas fa-search" (click)="onSearch(searchInput)"></i></div>
-    
-    <div id="links">
-        <ul id="navbar">
-            <li><a href="" [routerLink]="['/']" class="active" fragment="home">Home</a></li>
-            <li><a href="" routerLink="/" fragment="shop">Shop</a></li>
-           
-                <li class="cart"><a href="" [routerLink]="'/cart'">
-                        <div *ngIf="cartItems.length>0;then one;else two"></div>
-                        <ng-template #two class="noitems"><i class="fas fa-cart-shopping"></i></ng-template>
-                        <ng-template #one class="items">
-                            <p>*</p><i class="fas fa-cart-shopping"></i>
-                        </ng-template>
-                    </a></li>
-                <li><a href="" [routerLink]="'/favourite'"><i class="fa-solid fa-heart"></i>
-                    </a></li>
-
-
-            <div *ngIf="!isLoggedin; else loggedIn" id="navbar">
-                <li><a href="" [routerLink]="'/login'">Login</a></li>
-                <li><a href="" [routerLink]="'/signup'">Signup</a></li>
-            </div>
-            <ng-template #loggedIn>
-                <li><a href="" (click)="onlogout()">Logout</a></li>
-            </ng-template>
-        </ul>
-
-    </div>
-</div> -->
 <div id="header">
     <a href="#"><img src="../../../assets/images/logo.png" id="image" /></a>
     <div class="search">
-        <input type="text" placeholder="search" [(ngModel)]="searchInput" (keyup.enter)="onSearch(searchInput)" (input)="onSearch(searchInput)"/>
+        <input type="text" placeholder="search" [(ngModel)]="searchInput" (keyup.enter)="onSearch(searchInput)"
+            (input)="onSearch(searchInput)" />
         <i class="fas fa-search" (click)="onSearch(searchInput)"></i>
     </div>
 
     <div id="links">
         <ul id="navbar">
-        <li>
-            <a href="" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-                fragment="home">Home</a>
-        </li>
-            <li><a href="" routerLink="/" fragment="shop" >Shop</a></li>
-            
+            <li>
+                <a href="" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    fragment="home">Home</a>
+            </li>
+            <li><a href="" routerLink="/" fragment="shop">Shop</a></li>
+
             <li class="cart">
                 <a href="" [routerLink]="'/cart'" routerLinkActive="active">
                     <div class="items">
@@ -53,8 +22,8 @@
                     </div>
                 </a>
             </li>
-            
-      
+
+
             <li class="cart">
                 <a href="" [routerLink]="'/favourite'" routerLinkActive="active">
                     <div class="items">
@@ -63,10 +32,7 @@
                     </div>
                 </a>
             </li>
-            <!-- <li>
-                <a href="" [routerLink]="'/favourite'"><i class="fa-solid fa-heart"></i></a>
-            </li> -->
-            <div *ngIf="!isLoggedin; else loggedIn" id="navbar" >
+            <div *ngIf="!isLoggedin; else loggedIn" id="navbar">
                 <li><a href="" [routerLink]="'/login'" routerLinkActive="active">Login</a></li>
                 <li><a href="" [routerLink]="'/signup'" routerLinkActive="active">Signup</a></li>
             </div>

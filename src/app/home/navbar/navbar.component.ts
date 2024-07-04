@@ -2,16 +2,13 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { getCartItems } from '../../cart/state/cart.selector';
-import { CartState } from '../../cart/state/cart.state';
 import { getFavourites } from '../../favourite/state/favourite.selector';
-import { favouriteState } from '../../favourite/state/favourite.state';
 import { logoutAction } from '../../login/state/login.actions';
 import { getIsLoggedIn } from '../../login/state/login.selector';
-import { LoginState } from '../../login/state/login.state';
 import { featuredProducts } from '../../Models/FeaturedProducts';
 import { AppState } from '../../store/app.state';
 import { searchProducts } from '../featuredproducts/state/products.action';
-import { productsState } from '../featuredproducts/state/products.state';
+
 
 @Component({
   selector: 'app-navbar',
@@ -29,11 +26,12 @@ export class NavbarComponent {
     this.store
       .select(getIsLoggedIn)
       .subscribe((data) => (this.isLoggedin = data));
-    this.store.select(getCartItems).subscribe(data => this.cartItems = data);
-    this.store.select(getFavourites).subscribe(data => this.favItems = data);
-      
-    
- 
+    this.store
+      .select(getCartItems)
+      .subscribe((data) => (this.cartItems = data));
+    this.store
+      .select(getFavourites)
+      .subscribe((data) => (this.favItems = data));
   }
   onlogout() {
     this.store.dispatch(logoutAction());
@@ -42,20 +40,6 @@ export class NavbarComponent {
     if (search === null || search.trim() === '') {
       search = '';
     }
-    this.store.dispatch(searchProducts({ search }))
+    this.store.dispatch(searchProducts({ search }));
   }
-  // navigateToCart() {
-  //   if (this.isLoggedin) {
-  //     this.router.navigate(['/cart']);
-  //   } else {
-  //     alert('Login to continue');
-  //   }
-  // }
-  // navigateToFav() {
-  //   if (this.isLoggedin) {
-  //     this.router.navigate(['/favourite']);
-  //   } else {
-  //     alert('Login to continue');
-  //   }
-  // }
 }
