@@ -18,7 +18,23 @@
     height: 40%;
     width: 40%;
 }
+@media only screen and (max-width:799px){
+.footer1 h5,
+    .footer2 h5,
+    .footer3 h5 {
 
+        font-size: 16px !important;
+        font-weight: 500;
+        color: #222;
+
+    }
+        .footer1 p,
+        .footer2 p,
+        .footer3 p {
+            font-size: 10px !important;
+            color: #606063;
+        }
+}
 .footer1 h5,
 .footer2 h5,
 .footer3 h5 {

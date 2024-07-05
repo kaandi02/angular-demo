@@ -10,3 +10,121 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media (max-width:600px) {
+    #navbar[_ngcontent-ng-c962145604] {
+            display: none;
+            align-items: flex-start !important;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 10px;
+            width: 200px !important;
+    
+            background-color: #E3E6F3;
+            box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+    
+    
+        }
+}
+
+@media (max-width: 799px) {
+    .loginform {
+        padding: 2rem;
+
+    }
+
+    .button {
+        font-size: 1rem;
+    }
+
+    .loginform>header {
+        font-size: 0.5rem;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 1.5rem;
+
+
+    }
+}
+
+
+
+/* #navbar {
+        display: none;
+        
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+    right: 0;
+        width: 200px;
+        height: 55vh ;
+       
+        background-color: #E3E6F3;
+        box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 70px 20px;
+      
+        z-index: 999;
+        
+        transition: transform 0.3s ease;
+        transform: translateX(-100%);
+    }
+
+    #navbar.active {
+        transform: translateX(0);
+    }
+
+    #navbar li {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #navbar li a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1a1a1a;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease;
+    }
+
+    #navbar li a i {
+        margin-right: 8px;
+    }
+
+    #navbar li a:hover {
+        color: #088178;
+    }
+
+    .loginsignup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #mobile {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        
+        cursor: pointer;
+        padding: 20px;
+        
+    }
+
+    #mobile i {
+        color: #1a1a1a;
+        font-size: 24px;
+    }
+        #hero {
+           
+            height: 70vh;
+            background-position: top 30% right 30%;
+            padding: 0 120px;
+            
+    
+        } */

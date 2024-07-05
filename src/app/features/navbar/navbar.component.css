@@ -89,3 +89,8 @@
     top: -5px;
     right: 12px;
 }
+.loginsignup{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

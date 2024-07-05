@@ -32,7 +32,7 @@
                     </div>
                 </a>
             </li>
-            <div *ngIf="!isLoggedin; else loggedIn" id="navbar">
+            <div *ngIf="!isLoggedin; else loggedIn" class="loginsignup">
                 <li><a href="" [routerLink]="'/login'" routerLinkActive="active">Login</a></li>
                 <li><a href="" [routerLink]="'/signup'" routerLinkActive="active">Signup</a></li>
             </div>
