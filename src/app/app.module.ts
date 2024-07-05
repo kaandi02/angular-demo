@@ -45,11 +45,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
   providers: [
     provideAnimationsAsync(),
     ProductsService,
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: ApiInterceptor,
-    //   multi: true,
-    // },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })
