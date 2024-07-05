@@ -36,6 +36,11 @@ export class SingleproductComponent {
         }
       })
     );
+    this.route.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
   }
 
   addToCart(product: featuredProducts, quantity: number) {
@@ -64,10 +69,6 @@ export class SingleproductComponent {
     this.router.params.subscribe((data) => (this.id = data['id']));
 
     this.store.dispatch(loadProducts());
-    this.route.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+    
   }
 }
