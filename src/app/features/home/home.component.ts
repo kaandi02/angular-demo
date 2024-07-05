@@ -11,7 +11,7 @@ import { loadProducts } from '../../store/featured-products/products.action';
 export class HomeComponent {
   constructor(private router: ActivatedRoute,private store:Store<AppState>) {}
   ngOnInit() {
-       this.store.dispatch(loadProducts());
+      
     this.router.fragment.subscribe((shop) => this.JumpToSection(shop));
   }
   JumpToSection(shop: string | null) {

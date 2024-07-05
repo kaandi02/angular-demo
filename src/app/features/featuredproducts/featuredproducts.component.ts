@@ -28,13 +28,14 @@ export class FeaturedproductsComponent {
 
     private route: Router
   ) {
+     this.store.dispatch(loadProducts());
     this.products$ = this.store
       .select(getFilteredProducts)
       .pipe(map((products) => products ?? []));
   }
 
   ngOnInit() {
- 
+   
     this.store.select(getIsLoggedIn).subscribe((data) => (this.login = data));
   }
   generateStars(rating: number): number[] {
