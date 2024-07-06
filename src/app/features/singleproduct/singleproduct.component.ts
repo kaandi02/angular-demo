@@ -51,17 +51,21 @@ export class SingleproductComponent {
     if (this.loggedIn) {
       console.log(this.loggedIn);
       this.store.dispatch(cartAction({ product, quantity }));
-      alert('Product added to cart successfully');
-      this.snackBar.open('Product added to cart successfully', 'Close', {
-        duration: 3000,
+      
+      this.snackBar.open('Product added to cart', 'Close', {
+        duration: 5000,
       });
       this.route.navigate(['/cart']);
     } else {
-      alert('Login to continue');
-      this.snackBar.open('Login to continue', 'Close', {
-        duration: 3000,
-      });
-      this.route.navigate(['/login']);
+      
+       this.snackBar
+        .open('Login to continue', 'Close', {
+          duration: 5000,
+        })
+        .afterDismissed()
+        .subscribe(() => {
+          this.route.navigate(['/login']);
+        });
     }
   }
 
