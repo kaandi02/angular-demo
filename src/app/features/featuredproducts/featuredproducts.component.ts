@@ -7,7 +7,7 @@ import { favouriteAction } from '../../store/favourite/favourite.actions';
 import { getIsLoggedIn } from '../../store/login/login.selector';
 import { featuredProducts } from '../../models/FeaturedProducts';
 import { AppState } from '../../app.state';
-import { loadProducts } from '../../store/featured-products/products.action';
+import { filterProductsByPrice, loadProducts } from '../../store/featured-products/products.action';
 import {
   getFilteredProducts,
   getProducts,
@@ -18,25 +18,26 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   selector: 'app-featuredproducts',
   templateUrl: './featuredproducts.component.html',
   styleUrl: './featuredproducts.component.css',
+
 })
 export class FeaturedproductsComponent {
   products$!: Observable<featuredProducts[]>;
   login!: boolean;
   isFav!: boolean;
+  searchInput!: string;
 
   constructor(
     private store: Store<AppState>,
-   private snackBar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private route: Router
   ) {
-     this.store.dispatch(loadProducts());
+    this.store.dispatch(loadProducts());
     this.products$ = this.store
       .select(getFilteredProducts)
       .pipe(map((products) => products ?? []));
   }
 
   ngOnInit() {
-   
     this.store.select(getIsLoggedIn).subscribe((data) => (this.login = data));
   }
   generateStars(rating: number): number[] {
@@ -64,7 +65,7 @@ export class FeaturedproductsComponent {
       this.snackBar.open('Product added to cart', 'Close', {
         duration: 3000,
       });
-       this.store.dispatch(cartAction({ product, quantity }));
+      this.store.dispatch(cartAction({ product, quantity }));
     } else {
       this.snackBar
         .open('Login to continue', 'Close', {
@@ -75,7 +76,9 @@ export class FeaturedproductsComponent {
           this.route.navigate(['/login']);
         });
     }
-    
+  }
+  filterProducts(filterOption: string) {
+    this.store.dispatch(filterProductsByPrice({ filterOption }));
   }
 }
 

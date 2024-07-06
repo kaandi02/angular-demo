@@ -1,5 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
+import { featuredProducts } from '../../models/FeaturedProducts';
 import {
+  filterProductsByPrice,
   loadProductsFailure,
   loadProductsSuccess,
   searchProducts,
@@ -12,7 +14,7 @@ export const productsReducer = createReducer(
     return {
       ...state,
       products: action.products,
-      filteredProducts:action.products,
+      filteredProducts: action.products,
       // products: state.products ? [...state.products, ...action.products] : action.products,
       error: null,
     };
@@ -38,6 +40,47 @@ export const productsReducer = createReducer(
     return {
       ...state,
       filteredProducts: filteredProducts,
+    };
+  }),
+  on(filterProductsByPrice, (state, action) => {
+    let filteredProducts: featuredProducts[] | null | undefined = state.products;
+
+    switch (action.filterOption) {
+      case 'lowToHigh':
+        filteredProducts = state.products
+          ?.slice()
+          .sort((a, b) => a.price - b.price);
+        break;
+      case 'highToLow':
+        filteredProducts = state.products
+          ?.slice()
+          .sort((a, b) => b.price - a.price);
+        break;
+      case 'lessThan500':
+        filteredProducts =
+          state.products?.filter((product) => product.price < 500) ?? null;
+        break;
+      case 'lessThan1000':
+        filteredProducts =
+          state.products?.filter((product) => product.price < 1000) ?? null;
+        break;
+      case 'above1000':
+        filteredProducts =
+          state.products?.filter((product) => product.price > 1000) ?? null;
+        break;
+      case '2000plus':
+        filteredProducts =
+          state.products?.filter((product) => product.price >= 2000) ?? null;
+        break;
+      default:
+        // No filter applied or unknown filter option
+        filteredProducts = state.products;
+        break;
+    }
+
+    return {
+      ...state,
+      filteredProducts: filteredProducts ?? null,
     };
   })
 );

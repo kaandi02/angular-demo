@@ -8,7 +8,38 @@
     color: #222;
     margin-top: 20px;
 }
+#sortSelect {
+    font-size: 16px;
+    /* Example font size */
+    padding: 8px;
+    /* Example padding */
+    border: 1px solid #ccc;
+    /* Example border */
+    border-radius: 4px;
+    /* Example border radius */
+    width: 200px;
+    /* Example width */
+}
 
+/* Style the options inside the select */
+#sortSelect option {
+    font-size: 14px;
+    /* Example font size */
+    background-color: #fff;
+    /* Example background color */
+    color: #333;
+    /* Example text color */
+    padding: 8px;
+    /* Example padding */
+}
+
+/* Style the select when it is focused */
+#sortSelect:focus {
+    outline: none;
+    /* Remove default focus outline */
+    border-color: #007bff;
+    /* Example focus border color */
+}
 #product1 p {
     font-size: 16px;
     color: #465b52;

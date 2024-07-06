@@ -25,4 +25,30 @@
         <p>{{product.details}}</p>
     </div>
 </div>
+<div id="product1">
+    <h2>Best Selling Products</h2>
+    <p>Summer Collection New Modern Design</p>
+    <div class="pro-container">
+        <div class="pro" *ngFor="let product of products$ | async">
+            <img [src]="product.image" [routerLink]="'/products/'+product.id" />
+            <div class="des">
+                <span>{{product.brand}}</span>
+                <h5>{{product.description}}</h5>
+
+                <div class="star">
+                    <ng-container *ngFor="let star of generateStars(product.rating)">
+                        <span>⭐</span>
+                    </ng-container>
+                </div>
+                <h4>${{product.price}}</h4>
+
+            </div>
+           
+
+
+
+
+        </div>
+    </div>
+</div>
 <app-footer></app-footer>

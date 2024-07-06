@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { getProducts } from '../../store/featured-products/products.selector';
+import { getFilteredProducts, getProducts } from '../../store/featured-products/products.selector';
 import { featuredProducts } from '../../models/FeaturedProducts';
 import { filter, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -19,6 +19,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SingleproductComponent {
   id!: number;
   product$!: Observable<featuredProducts | undefined>;
+  products$!: Observable<featuredProducts[]>;
   value: number = 1;
   loggedIn!: boolean;
   constructor(
@@ -41,6 +42,10 @@ export class SingleproductComponent {
       .subscribe(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    this.store.dispatch(loadProducts());
+    this.products$ = this.store
+      .select(getFilteredProducts)
+      .pipe(map((products) => products ?? []));
   }
 
   addToCart(product: featuredProducts, quantity: number) {
@@ -51,14 +56,13 @@ export class SingleproductComponent {
     if (this.loggedIn) {
       console.log(this.loggedIn);
       this.store.dispatch(cartAction({ product, quantity }));
-      
+
       this.snackBar.open('Product added to cart', 'Close', {
         duration: 5000,
       });
       this.route.navigate(['/cart']);
     } else {
-      
-       this.snackBar
+      this.snackBar
         .open('Login to continue', 'Close', {
           duration: 5000,
         })
@@ -68,11 +72,14 @@ export class SingleproductComponent {
         });
     }
   }
+  generateStars(rating: number): number[] {
+    return Array(rating).fill(0);
+  }
+  
 
   ngOnInit() {
     this.router.params.subscribe((data) => (this.id = data['id']));
 
     this.store.dispatch(loadProducts());
-    
   }
 }
