@@ -24,6 +24,25 @@
         <h3>Product Details</h3>
         <p>{{product.details}}</p>
     </div>
+    <div class="customer-reviews">
+        <h3>Customer Reviews</h3>
+        
+        <div class="review-container">
+            <div class="review" *ngFor="let review of getReviews(product.id.toString()) | async">
+                <p>{{ review.comment }}</p>
+                <p class="timestamp">{{ review.timestamp | date: 'medium' }}</p>
+            </div>
+        </div>
+    
+        <form class="add-review-form" (ngSubmit)="addReview(product.id.toString())">
+            <textarea placeholder="Add a review..." [(ngModel)]="newReview" name="newReview" required></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+    
+    
+      
+    </div>
+    
 </div>
 <div id="product1">
     <h2>Best Selling Products</h2>

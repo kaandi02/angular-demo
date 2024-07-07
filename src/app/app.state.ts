@@ -9,6 +9,8 @@ import { loginReducer } from './store/login/login.reducer';
 import { LoginState } from './store/login/login.state';
 import { signupReducer } from './store/signup/signup.reducer';
 import { UserState } from './store/signup/signup.state';
+import { ReviewState } from './store/reviews/review.state';
+import { reviewReducer } from './store/reviews/review.reducer';
 
 export interface AppState {
   cart: CartState;
@@ -16,6 +18,7 @@ export interface AppState {
   products: productsState;
   login: LoginState;
   signup: UserState;
+  review:ReviewState
 }
 export const appReducer = {
   cart: cartReducer,
@@ -23,4 +26,5 @@ export const appReducer = {
   products: productsReducer,
   login: loginReducer,
   signup: signupReducer,
+  review:reviewReducer
 };
