@@ -91,6 +91,7 @@ export class SingleproductComponent {
     const review: Review = {
       comment: this.newReview,
       timestamp: Date.now(), 
+      user:this.user
     };
 
     

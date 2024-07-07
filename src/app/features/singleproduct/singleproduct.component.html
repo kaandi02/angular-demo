@@ -29,7 +29,7 @@
         
         <div class="review-container">
             <div class="review" *ngFor="let review of getReviews(product.id.toString()) | async">
-                <p>{{user}}</p>
+                <p>{{review.user}}</p>
                 <h4>{{ review.comment }}</h4>
                 <p class="timestamp">{{ review.timestamp | date: 'medium' }}</p>
             </div>
