@@ -1,7 +1,11 @@
+import { User } from "../../models/User";
+
 export const initialState:LoginState={
-    isloggedIn:false,
+    isloggedIn: false,
+    user:''
 }
 
 export interface LoginState{
-    isloggedIn:boolean
+    isloggedIn: boolean;
+    user:string
 }

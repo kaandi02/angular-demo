@@ -1,5 +1,22 @@
 #product1 {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#product-title {
+    text-align: center;
+    width: 90%;
+    
+}
+
+.select{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: flex-start;
+
 }
 
 #product1 h2 {

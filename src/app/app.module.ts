@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatError, MatFormField, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
@@ -32,6 +32,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+    MatFormField,
+    MatLabel,
+    MatError,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,

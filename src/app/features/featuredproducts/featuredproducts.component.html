@@ -1,8 +1,11 @@
 <div id="product1">
+    <div id="product-title">
     <h2>Featured Products</h2>
     <p>Summer Collection New Modern Design</p>
+    <div class="select">
+        <label>Sort by</label>
     <select #sortSelect (change)="filterProducts(sortSelect.value)" id="sortSelect" >
-        <option value="default">Sort by Price</option>
+        <option value="default">None</option>
         <option value="lowToHigh">Price: Low to High</option>
         <option value="highToLow">Price: High to Low</option>
         <option value="lessThan500">Price: Less than 500</option>
@@ -10,6 +13,8 @@
         <option value="above1000">Price: Above 1000</option>
         <option value="2000plus">Price: 2000+</option>
     </select>
+    </div>
+    </div>
     
     <div class="pro-container">
         <div class="pro" *ngFor="let product of products$ | async">

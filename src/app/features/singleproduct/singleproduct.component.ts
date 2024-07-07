@@ -10,7 +10,7 @@ import { filter, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { loadProducts } from '../../store/featured-products/products.action';
 import { cartAction } from '../../store/cart/cart.actions';
-import { getIsLoggedIn } from '../../store/login/login.selector';
+import { getIsLoggedIn, getUser } from '../../store/login/login.selector';
 import { AppState } from '../../app.state';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Review } from '../../models/Review';
@@ -30,6 +30,7 @@ export class SingleproductComponent {
   loggedIn!: boolean;
   newReview: string = '';
   reviewsFromLocalStorage: Review[] = [];
+  user!: string;
   constructor(
     private router: ActivatedRoute,
     private store: Store<AppState>,
@@ -109,7 +110,7 @@ export class SingleproductComponent {
 
   ngOnInit() {
     this.router.params.subscribe((data) => (this.id = data['id']));
-
+    this.store.select(getUser).subscribe(data=>this.user=data)
     this.store.dispatch(loadProducts());
     const localStorageKey = `product_reviews_${this.id}`;
     const localStorageReviews = JSON.parse(

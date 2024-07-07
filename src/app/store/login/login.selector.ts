@@ -5,3 +5,6 @@ export const loginselector=createFeatureSelector<LoginState>('login');
 export const getIsLoggedIn=createSelector(loginselector,(state)=>{
     return state.isloggedIn;
 })
+export const getUser = createSelector(loginselector, (state) => {
+    return state.user
+})

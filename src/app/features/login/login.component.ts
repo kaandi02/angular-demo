@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { User } from '../../models/User';
 import { AppState } from '../../app.state';
-import { loginAction } from '../../store/login/login.actions';
+import { getUser, loginAction } from '../../store/login/login.actions';
 
 @Component({
   selector: 'app-login',
@@ -32,6 +32,7 @@ export class LoginComponent {
     if (retrievedData) {
       try {
         signupUsers = JSON.parse(retrievedData).user || [];
+        console.log(signupUsers);
       } catch {
         localStorage.removeItem('signupState');
       }
@@ -43,7 +44,9 @@ export class LoginComponent {
 
     if (foundUser) {
       if (foundUser.password === loginUser.password) {
+        const user = foundUser.email;
         this.store.dispatch(loginAction());
+        this.store.dispatch(getUser({user}))
         this.router.navigate(['/']);
         alert('You have logged in successfully!');
       } else {

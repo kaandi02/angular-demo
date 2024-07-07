@@ -1,88 +1,104 @@
+<!-- payment-form.component.html -->
 <div class="container">
     <h1>Checkout</h1>
 
     <form id="checkout-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="con">
-
-
+        <div class="container1">
             <h1>Billing Address</h1>
             <div class="form-group">
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="fullName" class="form-control" formControlName="name">
-                <div *ngIf="loginForm.get('name')?.touched && !loginForm.get('name')?.valid" class="validationdiv">
-                    <div>Name is required</div>
-                </div>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput id="full-name" name="fullName" formControlName="name">
+                    <mat-error *ngIf="loginForm.get('name')?.touched && !loginForm.get('name')?.valid">Name is
+                        required</mat-error>
+                </mat-form-field>
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-control" formControlName="email">
-                <div *ngIf="loginForm.get('email')?.touched && !loginForm.get('email')?.valid" class="validationdiv">
-                    <div *ngIf="loginForm.get('email')?.errors?.['required']">Email Is Required</div>
-                    <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid Email</div>
-                </div>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="email" required>
+                    <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
             </div>
 
             <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" class="form-control" formControlName="address">
-                <div *ngIf="loginForm.get('address')?.touched && !loginForm.get('address')?.valid"
-                    class="validationdiv">
-                    <div>Address is required</div>
-                </div>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Address</mat-label>
+                    <input matInput id="address" name="address" formControlName="address">
+                    <mat-error *ngIf="loginForm.get('address')?.touched && !loginForm.get('address')?.valid">Address is
+                        required</mat-error>
+                </mat-form-field>
             </div>
 
             <div class="form-group">
-                <label for="city">City</label>
-                <input type="text" id="city" name="city" class="form-control" formControlName="city">
-                <div *ngIf="loginForm.get('city')?.touched && !loginForm.get('city')?.valid" class="validationdiv">
-                    <div>City is required</div>
-                </div>
-            </div>
-
-
-
-            <h1>Payment</h1>
-            <div class="form-group">
-                <label for="card-name">Name on Card</label>
-                <input type="text" id="card-name" class="form-control" formControlName="cardname">
-                <div *ngIf="loginForm.get('cardname')?.touched && !loginForm.get('cardname')?.valid"
-                    class="validationdiv">
-                    <div>CardName is required</div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="card-number">Card Number</label>
-                <input type="text" id="card-number" class="form-control" formControlName="cardNumber">
-                <div *ngIf="loginForm.get('cardNumber')?.touched && !loginForm.get('cardNumber')?.valid"
-                    class="validationdiv">
-                    <div *ngIf="loginForm.get('cardNumber')?.errors?.['required']">Cardnumber is required</div>
-                    <div *ngIf="loginForm.get('cardNumber')?.errors?.['maxlength']">Must be 16 digits</div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="exp-date">Expiration Date</label>
-                <input type="text" id="exp-date" placeholder="MM/YY" class="form-control" formControlName="expiration">
-                <div *ngIf="loginForm.get('expiration')?.touched && !loginForm.get('expiration')?.valid"
-                    class="validationdiv">
-                    <div>Expiration Date is required</div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" class="form-control" formControlName="cvv">
-                <div *ngIf="loginForm.get('cvv')?.touched && !loginForm.get('cvv')?.valid" class="validationdiv">
-                    <div *ngIf="loginForm.get('cvv')?.errors?.['required']">CVV is required</div>
-                    <div *ngIf="loginForm.get('cvv')?.errors?.['maxlength']">enter only 3 numbers</div>
-                </div>
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>City</mat-label>
+                    <input matInput id="city" name="city" formControlName="city">
+                    <mat-error *ngIf="loginForm.get('city')?.touched && !loginForm.get('city')?.valid">City is
+                        required</mat-error>
+                </mat-form-field>
             </div>
         </div>
 
+        <div class="container2">
+            <h1>Payment</h1>
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Name on Card</mat-label>
+                    <input matInput id="card-name" formControlName="cardname">
+                    <mat-error *ngIf="loginForm.get('cardname')?.touched && !loginForm.get('cardname')?.valid">Card Name
+                        is required</mat-error>
+                </mat-form-field>
+            </div>
 
-        <button [ngClass]="{'button':loginForm.valid,'disabled':!loginForm.valid}" type="submit"
-            [disabled]="!loginForm.valid">Submit</button>
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Card Number</mat-label>
+                    <input matInput id="card-number" formControlName="cardNumber">
+                    <mat-error *ngIf="loginForm.get('cardNumber')?.touched && !loginForm.get('cardNumber')?.valid">
+                        <div *ngIf="loginForm.get('cardNumber')?.errors?.['required']">Card number is required</div>
+                        <div *ngIf="loginForm.get('cardNumber')?.errors?.['minlength']">Card number must be exactly 16
+                            digits</div>
+                        <div *ngIf="loginForm.get('cardNumber')?.errors?.['maxlength']">Card number must be exactly 16
+                            digits</div>
+                        <div *ngIf="loginForm.get('cardNumber')?.errors?.['pattern']">Card number must be numeric</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>Expiration Date</mat-label>
+                    <input matInput id="exp-date" placeholder="MM/YY" formControlName="expiration">
+                    <mat-error *ngIf="loginForm.get('expiration')?.touched && !loginForm.get('expiration')?.valid">
+                        <div *ngIf="loginForm.get('expiration')?.errors?.['required']">Expiration Date is required</div>
+                        <div *ngIf="loginForm.get('expiration')?.errors?.['invalidDate']">Invalid Expiration Date</div>
+                        <div *ngIf="loginForm.get('expiration')?.errors?.['pastDate']">Expiration Date must be in the
+                            future</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group">
+                <mat-form-field appearance="outline" class="full-width">
+                    <mat-label>CVV</mat-label>
+                    <input matInput id="cvv" formControlName="cvv">
+                    <mat-error *ngIf="loginForm.get('cvv')?.touched && !loginForm.get('cvv')?.valid">
+                        <div *ngIf="loginForm.get('cvv')?.errors?.['required']">CVV is required</div>
+                        <div
+                            *ngIf="loginForm.get('cvv')?.errors?.['minlength'] || loginForm.get('cvv')?.errors?.['maxlength']">
+                            Enter exactly 3 numbers</div>
+                        <div *ngIf="loginForm.get('cvv')?.errors?.['pattern']">CVV must be numeric</div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <button mat-raised-button color="primary"
+                [ngClass]="{'button': loginForm.valid, 'disabled': !loginForm.valid}" type="submit"
+                [disabled]="!loginForm.valid">Submit</button>
+        </div>
     </form>
 </div>
