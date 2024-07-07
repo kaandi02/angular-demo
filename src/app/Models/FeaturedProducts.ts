@@ -1,4 +1,5 @@
 export interface featuredProducts {
+  stripeid: any;
   id: number;
   image: string;
   brand: string;

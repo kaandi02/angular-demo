@@ -3,9 +3,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 80px;
+   
     background-color: #E3E6F3;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
-    z-index: 999;
+    z-index: 99;
     position: sticky;
     top: 0;
     left: 0;
@@ -39,6 +40,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 #navbar li {
@@ -89,8 +91,79 @@
     top: -5px;
     right: 12px;
 }
-.loginsignup{
+
+.loginsignup {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    /* Hide by default on larger screens */
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 500px) {
+    #header {
+        padding: 10px;
+        
+    }
+
+    .search {
+        width: 50%;
+       
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1000;
+    }
+
+   
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -200px;
+       
+        width: 200px;
+        height: 100%;
+        background-color: #fff;
+        color: black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .sidebar,.open {
+        left: 0;
+        background-color: black;
+       
+    }
+
+   
+    #navbar {
+        display: none;
+        
+    }
+
+    .loginsignup {
+        flex-direction: column;
+        /* Stack login/signup links */
+        align-items: flex-end;
+        padding-right: 20px;
+        /* Adjust padding as needed */
+    }
 }

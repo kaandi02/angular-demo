@@ -23,7 +23,6 @@
                 </a>
             </li>
 
-
             <li class="cart">
                 <a href="" [routerLink]="'/favourite'" routerLinkActive="active">
                     <div class="items">
@@ -32,13 +31,28 @@
                     </div>
                 </a>
             </li>
-            <div *ngIf="!isLoggedin; else loggedIn" class="loginsignup">
+
+            <ng-container *ngIf="!isLoggedin; else loggedIn">
                 <li><a href="" [routerLink]="'/login'" routerLinkActive="active">Login</a></li>
                 <li><a href="" [routerLink]="'/signup'" routerLinkActive="active">Signup</a></li>
-            </div>
+            </ng-container>
+
             <ng-template #loggedIn>
                 <li><a href="" (click)="onlogout()" routerLinkActive="active">Logout</a></li>
             </ng-template>
         </ul>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger" (click)="toggleSidebar()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" [ngClass]="{ 'open': sidebarOpen }">
+        <!-- Sidebar content -->
+        <!-- Example: Links, additional navigation, etc. -->
     </div>
 </div>

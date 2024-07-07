@@ -19,6 +19,11 @@ export class NavbarComponent {
   searchInput!: string;
   cartItems!: featuredProducts[];
   favItems!: featuredProducts[];
+  sidebarOpen:boolean = false;
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
 
   constructor(private store: Store<AppState>, private router: Router) {}
   ngOnInit() {
