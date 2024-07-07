@@ -56,24 +56,23 @@ export const productsReducer = createReducer(
           ?.slice()
           .sort((a, b) => b.price - a.price);
         break;
-      case 'lessThan500':
+      case 'lessThan10':
         filteredProducts =
-          state.products?.filter((product) => product.price < 500) ?? null;
+          state.products?.filter((product) => product.price < 10) ?? null;
         break;
-      case 'lessThan1000':
+      case 'lessThan5':
         filteredProducts =
-          state.products?.filter((product) => product.price < 1000) ?? null;
+          state.products?.filter((product) => product.price < 5) ?? null;
         break;
-      case 'above1000':
+      case 'above10':
         filteredProducts =
-          state.products?.filter((product) => product.price > 1000) ?? null;
+          state.products?.filter((product) => product.price > 10) ?? null;
         break;
-      case '2000plus':
+      case 'plus':
         filteredProducts =
-          state.products?.filter((product) => product.price >= 2000) ?? null;
+          state.products?.filter((product) => product.price >= 12) ?? null;
         break;
       default:
-        // No filter applied or unknown filter option
         filteredProducts = state.products;
         break;
     }

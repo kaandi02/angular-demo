@@ -3,9 +3,9 @@
     { "id":1,
       "image": "./assets/images/products/f1.jpg",
       "brand": "adidas",
-      "description": "Cartoon Floral T-Shirt",
+      "description": " Floral T-Shirt",
       "rating": "5",
-      "price": 500,
+      "price": 5,
       
       "details":"versatile wardrobe essentials that combine comfort and style, making them suitable for a wide range of occasions. Whether you're dressing down for a relaxed weekend or adding a touch of flair to your everyday look, our selection of casual shirts offers something for everyone."
     
@@ -14,7 +14,7 @@
       "id": 2,
       "image": "./assets/images/products/f2.jpg",
       "brand": "adidas",
-      "description": "Cartoon Floral T-Shirt",
+      "description": "Cartoon T-Shirt",
       "rating": 5,
       "price": 1000,
       
@@ -24,7 +24,7 @@
       "id": 3,
       "image": "./assets/images/products/f3.jpg",
       "brand": "adidas",
-      "description": "Cartoon Floral T-Shirt",
+      "description": "Designer T-Shirt",
       "rating": 5,
       "price": 5,
       
@@ -34,7 +34,7 @@
       "id": 4,
       "image": "./assets/images/products/f4.jpg",
       "brand": "adidas",
-      "description": "Cartoon Floral T-Shirt",
+      "description": "Cartoon Floral Shirt",
       "rating": 5,
       "price": 7,
       
@@ -44,7 +44,7 @@
       "id": 5,
       "image": "./assets/images/products/f5.jpg",
       "brand": "adidas",
-      "description": "Cartoon Floral T-Shirt",
+      "description": "Cartoon Designer T-Shirt",
       "rating": 5,
       "price": 9,
       
@@ -84,7 +84,7 @@
       "id": 9,
       "image": "./assets/images/products/n1.jpg",
       "brand": "adidas",
-      "description": "Formal Shirt",
+      "description": " Blue Formal Shirt",
       "rating": 5,
       "price": 12,
       
@@ -94,7 +94,7 @@
       "id": 10,
       "image": "./assets/images/products/n2.jpg",
       "brand": "adidas",
-      "description": "Formal Shirt",
+      "description": "Grey Formal Shirt",
       "rating": 5,
       "price": 12,
       
@@ -104,7 +104,7 @@
       "id": 11,
       "image": "./assets/images/products/n3.jpg",
       "brand": "adidas",
-      "description": "Formal Shirt",
+      "description": "White Formal Shirt",
       "rating": 5,
       "price": 12,
       
@@ -114,7 +114,7 @@
        "id": 12,
        "image": "./assets/images/products/n4.jpg",
        "brand": "adidas",
-       "description": "Formal Shirt",
+       "description": "Half-sleeve Formal Shirt",
        "rating": 5,
        "price": 12,
        
@@ -123,7 +123,7 @@
        "id": 13,
        "image": "./assets/images/products/n5.jpg",
        "brand": "adidas",
-       "description": "Formal Shirt",
+       "description": "Baggy Formal Shirt",
        "rating": 5,
        "price": 12,
        
@@ -141,7 +141,7 @@
        "id": 15,
        "image": "./assets/images/products/n7.jpg",
        "brand": "adidas",
-       "description": "Formal Shirt",
+       "description": "Beige Formal Shirt",
        "rating": 5,
        "price": 12,
        
@@ -150,7 +150,7 @@
        "id": 16,
        "image": "./assets/images/products/n8.jpg",
        "brand": "adidas",
-       "description": "Formal Shirt",
+       "description": "Brown Half-Sleeve",
        "rating": 5,
        "price": 12,
     

@@ -68,19 +68,12 @@ export class SingleproductComponent {
       console.log(this.loggedIn);
       this.store.dispatch(cartAction({ product, quantity }));
 
-      this.snackBar.open('Product added to cart', 'Close', {
-        duration: 5000,
-      });
+      alert('added to cart');
       this.route.navigate(['/cart']);
     } else {
-      this.snackBar
-        .open('Login to continue', 'Close', {
-          duration: 5000,
-        })
-        .afterDismissed()
-        .subscribe(() => {
-          this.route.navigate(['/login']);
-        });
+      alert('login');
+      this.route.navigate(['/login']);
+     
     }
   }
 
