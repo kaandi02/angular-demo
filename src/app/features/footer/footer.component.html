@@ -20,19 +20,19 @@
         </div>
     </div>
     <div class="footer2">
-        <h5>About</h5>
-        <p>About Us</p>
-        <p>Delivery Information</p>
-        <p>Privacy Policy</p>
-        <p>Terms & Conditions</p>
+        <h5 [routerLink]="'/about'">About</h5>
+        <p [routerLink]="'/about'">About Us</p>
+        <p [routerLink]="'/contactus'">Delivery Information</p>
+        <p [routerLink]="'/about'">Privacy Policy</p>
+        <p [routerLink]="'/contactus'">Terms & Conditions</p>
         <p>Contact Us</p>
     </div>
     <div class="footer3">
         <h5>My Account</h5>
-        <p>Sign In</p>
-        <p>View Cart</p>
-        <p>My Wishlist</p>
-        <p>Help</p>
+        <p [routerLink]="'/login'">Sign In</p>
+        <p [routerLink]="'/cart'">View Cart</p>
+        <p [routerLink]="'/favourite'">My Wishlist</p>
+        <p [routerLink]="'/about'">Help</p>
     </div>
 
 </div>

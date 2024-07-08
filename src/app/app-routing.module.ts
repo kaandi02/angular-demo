@@ -45,6 +45,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/about/about.module').then((m) => m.AboutModule),
   },
+  {
+    path: 'contactus',
+    loadChildren: () =>
+      import('./features/contactus/contactus.module').then((m) => m.ContactusModule),
+  },
   { path: '**', component: ErrorComponent },
 ];
 

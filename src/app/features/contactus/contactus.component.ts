@@ -3,11 +3,11 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrl: './about.component.css',
+  selector: 'app-contactus',
+  templateUrl: './contactus.component.html',
+  styleUrl: './contactus.component.css',
 })
-export class AboutComponent {
+export class ContactusComponent {
   constructor(private route: Router) {
     this.route.events
       .pipe(filter((event) => event instanceof NavigationEnd))

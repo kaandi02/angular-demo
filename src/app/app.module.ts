@@ -21,7 +21,8 @@ import { SharedModule } from './shared/shared.module';
 import { ErrorComponent } from './features/error/error.component';
 import { ProductsService } from './Services/products.service';
 import { ApiInterceptor } from './interceptor/api.interceptor';
-import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ContactusComponent } from './features/contactus/contactus.component'
 
 @NgModule({
   declarations: [AppComponent, ErrorComponent],

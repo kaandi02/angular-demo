@@ -10,4 +10,19 @@
 .content{
     padding-left: 2%;
     margin-top: 70px;
+}#about-head {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+}
+
+#about-head>img {
+    width: 40%;
+    height: 40%;
+}
+
+.content {
+    padding: 2%;
+    margin-top: 50x;
+    background-color: rgb(255, 253, 253)
 }
