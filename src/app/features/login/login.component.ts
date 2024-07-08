@@ -26,7 +26,6 @@ export class LoginComponent {
     });
   }
   onLoginSubmit() {
-    console.log(this.loginForm.value);
     let loginUser: User = {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password,
@@ -50,6 +49,7 @@ export class LoginComponent {
     if (foundUser) {
       if (foundUser.password === loginUser.password) {
         const user = foundUser.email;
+        localStorage.setItem('loggedInUser', JSON.stringify({ user }));
         this.store.dispatch(loginAction());
         this.store.dispatch(getUser({ user }));
         this.snackBar

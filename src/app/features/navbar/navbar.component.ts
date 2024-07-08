@@ -38,7 +38,9 @@ export class NavbarComponent {
       .subscribe((data) => (this.favItems = data));
   }
   onlogout() {
-    this.store.dispatch(logoutAction());
+     localStorage.removeItem('loggedInUser');
+     this.store.dispatch(logoutAction());
+     this.router.navigate(['/login']);
   }
   onSearch(search: string) {
     if (search === null || search.trim() === '') {
