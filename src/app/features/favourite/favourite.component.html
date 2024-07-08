@@ -7,15 +7,8 @@
                 <img [src]="product.image" [routerLink]="'/products/'+product.id" />
                 <button class="button" (click)="removeFromFav(product)">X</button>
                 <div class="content">
-
                     <h3>{{product.brand}}-${{product.price}}</h3>
-
-
-
                     <button (click)="addToCart(product,1)">Add to cart</button>
-
-
-
                 </div>
             </div>
         </div>
@@ -27,4 +20,4 @@
             <a [routerLink]="'/'" class="explore-button">Start Exploring</a>
         </div>
     </ng-template>
-    <app-footer></app-footer>
+<app-footer></app-footer>

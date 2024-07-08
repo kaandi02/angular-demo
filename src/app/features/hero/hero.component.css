@@ -6,77 +6,22 @@
   background-size: cover;
   padding: 0 120px;
   transition: 0.9s ease-in-out;
- 
-
-}
-
-@media only screen and (max-width:799px) {
-  #hero{
-    padding: 0 !important;
-    display: flex;
-    align-items: flex-end;
-
-  }
-  .hero-card>h1 {
-    display: none;
-  
-    font-size: 12px !important;
-  }
-
-  .hero-card>h2 {
-  display: none;
-    font-size: 12px !important;
-
-
-  }
-
-    .hero-card>h4 {
-    font-weight: 800;
-    font-size: 24px !important;
-
-
-  }
-
-    .hero-card>p {
-  
-    font-size: 15px !important;
-    font-weight: 500;
-    margin: 0 10px 0 0;
-
-
-  }
- .hero-card>button{
-    padding: 10px 50px 10px 40px !important;
-  }
-  .hero-card{
-   
-    height: 40vh !important;
-    width: 100vw !important;
-    background-color: rgba(227, 230, 243,0.8);
-    align-items: center !important;
-
-    
-  }
-
 }
 
 .hero-card h1 {
   font-size: 50px;
   margin-top: 10px;
   font-weight: 500;
-
   color: #088178;
 }
 
 .hero-card h2 {
   font-size: 46px;
-
   color: #222;
 }
 
 .hero-card h4 {
   font-size: 23px;
-
   color: #465b52;
 }
 
@@ -94,13 +39,53 @@
   padding: 14px 80px 14px 65px;
   background-repeat: no-repeat;
   font-weight: 600;
-
 }
-.hero-card{
+
+.hero-card {
   display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-      height: 90vh;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 90vh;
+}
+
+@media only screen and (max-width:799px) {
+  #hero {
+    padding: 0 !important;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .hero-card>h1 {
+    display: none;
+    font-size: 12px !important;
+  }
+
+  .hero-card>h2 {
+    display: none;
+    font-size: 12px !important;
+  }
+
+  .hero-card>h4 {
+    font-weight: 800;
+    font-size: 24px !important;
+  }
+
+  .hero-card>p {
+    font-size: 15px !important;
+    font-weight: 500;
+    margin: 0 10px 0 0;
+  }
+
+  .hero-card>button {
+    padding: 10px 50px 10px 40px !important;
+  }
+
+  .hero-card {
+    height: 40vh !important;
+    width: 100vw !important;
+    background-color: rgba(227, 230, 243, 0.8);
+    align-items: center !important;
+  }
 
 }

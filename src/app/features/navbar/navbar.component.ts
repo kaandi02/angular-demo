@@ -19,7 +19,7 @@ export class NavbarComponent {
   searchInput!: string;
   cartItems!: featuredProducts[];
   favItems!: featuredProducts[];
-  sidebarOpen:boolean = false;
+  sidebarOpen: boolean = false;
 
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;

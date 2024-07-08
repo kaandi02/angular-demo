@@ -3,7 +3,6 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './features/error/error.component';
 import { AuthGuard } from './guard/auth.guard';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -42,15 +41,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'checkout',
-    // canActivate: [AuthGuard],
-    loadChildren: () =>
-      import('./features/checkout/checkout.module').then(
-        (m) => m.CheckoutModule
-      ),
-  },
-
-  {
     path: 'about',
     loadChildren: () =>
       import('./features/about/about.module').then((m) => m.AboutModule),
@@ -59,9 +49,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes),
-  ],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

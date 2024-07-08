@@ -1,87 +1,14 @@
-@media only screen and (max-width:799px) {
-    #prodetails {
-            display: flex;
-            flex-direction: column;
-         
-            padding: 0 !important;
-         
-            
-        }
-                .button {
-                    color: white;
-                    background-color: rgb(0, 98, 98);
-                    border: none;
-                    width: 80% !important;
-                    padding: 10px;
-                    margin-bottom: 20px;
-        
-        
-                }
-    .section1 img {
-            height: 100% !important;
-            width: 100% !important;
-            padding: 20px;
-            object-fit: contain;
-        }
-                .section2 p {
-                    font-size: 10px !important;
-                    color: #465b52;
-
-
-                }
-                .section h1{
-                    font-size: 12px;
-                }
-        
-                .section2 h3 {
-                    font-size: 20px !important;
-                    margin-top: 10px;
-                    color: #222;
-                    font-weight: 600;
-                }
-                                .option {
-                                    margin-top: 10px;
-                                }
-                .option input{
-                    width:30px !important
-                }
-                .section2{
-                    margin-top: 10px !important;
-                }
-                                .pro {
-                                    min-width: 180px !important;
-                                }
-                
-                                .button {
-                                    font-size: 10px;
-                                    text-align: left !important;
-                                    width: 40% !important;
-                                }
-                
-                                #product1 h2 {
-                                    font-size: 24px !important;
-                                }
-}
-
-
-
-
-
 #prodetails {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 20px 20px;
     width: 100%;
-   
 }
 
 .section1 {
-   
     width: 40%;
     height: 86vh;
-
-
 }
 
 .section1 img {
@@ -95,12 +22,8 @@
 
 .section2 {
     display: flex;
-   
     flex-direction: column;
     width: 60%;
-    
-
-
 }
 
 .section2 p {
@@ -117,7 +40,6 @@
 .butoondiv {
     display: flex;
     flex-direction: row;
-
 }
 
 .counter {
@@ -128,10 +50,6 @@
     margin-bottom: 10px;
     border: none;
     border-radius: 100%;
-
-
-
-
 }
 
 .button {
@@ -141,8 +59,6 @@
     width: 15%;
     padding: 10px;
     margin-bottom: 20px;
-
-
 }
 
 .option {
@@ -154,20 +70,18 @@ input {
     margin-bottom: 30px;
     margin-right: 10px;
     padding: 5px;
-
 }
 
 .option input {
     width: 5%;
-
 }
+
 #product1 {
     text-align: center;
 }
 
 #product1 h2 {
     font-size: 46px;
-
     color: #222;
     margin-top: 20px;
 }
@@ -175,23 +89,6 @@ input {
 #product1 p {
     font-size: 16px;
     color: #465b52;
-
-}
-
-@media only screen and (max-width:799px) {
-    .pro {
-        min-width: 180px !important;
-    }
-
-    .button {
-        font-size: 10px;
-        text-align: left !important;
-        width: 40% !important
-    }
-
-    #product1 h2 {
-        font-size: 24px !important;
-    }
 }
 
 .pro {
@@ -208,9 +105,7 @@ input {
     text-align: left;
 }
 
-/* .pro:hover{
-     box-shadow: 20px 20px 30px rgba(0,0,0,0,06);
-} */
+
 .pro img {
     width: 100%;
     border-radius: 20px;
@@ -242,23 +137,6 @@ input {
     font-size: 15px;
     font-weight: 700;
     color: #088178;
-
-
-}
-
-.cart {
-    /* width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
-    background-color: #e8f6ea;
-
-    /* font-weight: 500;
-
-    border: 1px solid #cce7d0;
-    /* position: absolute; */
-    /* bottom: 20px;
-    right: 10px;  */
 }
 
 .pro i {
@@ -277,40 +155,32 @@ input {
     margin-left: 20px;
     gap: 20px;
     scroll-behavior: smooth;
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .pro-container::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
 
-
-
 .button {
-
     width: 30%;
     color: white;
     background-color: rgb(0, 98, 98);
     border: none;
     border-radius: 10px;
-
     padding: 10px;
     margin-bottom: 20px;
-
     text-align: center;
-
 }
 
 .button:hover {
     cursor: pointer;
 }
+
 .customer-reviews {
-   
     padding: 20px;
-   
-    width:100%;
-   
+    width: 100%;
 }
 
 .customer-reviews h3 {
@@ -323,14 +193,14 @@ input {
     margin-top: 10px;
     max-height: 300px;
     overflow: scroll;
-    
+
 }
-.review-container::-webkit-scrollbar{
+
+.review-container::-webkit-scrollbar {
     display: none;
 }
 
 .review {
-   
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     padding: 10px;
@@ -341,7 +211,8 @@ input {
     margin: 0;
     color: #999;
 }
-.review h4{
+
+.review h4 {
     font-size: 20px;
 }
 
@@ -361,7 +232,6 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
-    /* Allows vertical resizing of textarea */
 }
 
 .add-review-form button {
@@ -373,21 +243,101 @@ input {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    
     background-color: rgb(0, 98, 98);
-   
-
 }
 
 .add-review-form button:hover {
     background-color: #0056b3;
 }
 
-@keyframes imageani{
-    from{
+@keyframes imageani {
+    from {
         transform: translateX(-200px);
     }
-    to{
+
+    to {
         transform: translateX(0);
+    }
+}
+
+@media only screen and (max-width:799px) {
+    #prodetails {
+        display: flex;
+        flex-direction: column;
+        padding: 0 !important;
+    }
+
+    .button {
+        color: white;
+        background-color: rgb(0, 98, 98);
+        border: none;
+        width: 80% !important;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .section1 img {
+        height: 100% !important;
+        width: 100% !important;
+        padding: 20px;
+        object-fit: contain;
+    }
+
+    .section2 p {
+        font-size: 10px !important;
+        color: #465b52;
+    }
+
+    .section h1 {
+        font-size: 12px;
+    }
+
+    .section2 h3 {
+        font-size: 20px !important;
+        margin-top: 10px;
+        color: #222;
+        font-weight: 600;
+    }
+
+    .option {
+        margin-top: 10px;
+    }
+
+    .option input {
+        width: 30px !important
+    }
+
+    .section2 {
+        margin-top: 10px !important;
+    }
+
+    .pro {
+        min-width: 180px !important;
+    }
+
+    .button {
+        font-size: 10px;
+        text-align: left !important;
+        width: 40% !important;
+    }
+
+    #product1 h2 {
+        font-size: 24px !important;
+    }
+}
+
+@media only screen and (max-width:799px) {
+    .pro {
+        min-width: 180px !important;
+    }
+
+    .button {
+        font-size: 10px;
+        text-align: left !important;
+        width: 40% !important
+    }
+
+    #product1 h2 {
+        font-size: 24px !important;
     }
 }

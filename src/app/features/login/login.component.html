@@ -5,7 +5,6 @@
         <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
 
             <div>
-
                 <input placeholder="Enter your email" type="text" class="form-control" formControlName="email" />
                 <div *ngIf="loginForm.get('email')?.touched && !loginForm.get('email')?.valid" class="validationdiv">
                     <div *ngIf="loginForm.get('email')?.errors?.['required']">Email Is Required</div>
@@ -25,7 +24,6 @@
                 <button [ngClass]="{'button':loginForm.valid,'disabled':!loginForm.valid}" type="submit"
                     [disabled]="!loginForm.valid">Login</button>
             </div>
-
             <div class="signup">
                 <span class="signup">Don't have an account?
                     <label for="">Sign up</label>

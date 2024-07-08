@@ -10,11 +10,13 @@ import { getIsLoggedIn } from '../store/login/login.selector';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>) {}
   isLoggedIn!: boolean;
-    
-    getAuthIsLoggedIn() {
-      this.store.select(getIsLoggedIn).subscribe(data => this.isLoggedIn = data);
-      return this.isLoggedIn
-    }
+
+  getAuthIsLoggedIn() {
+    this.store
+      .select(getIsLoggedIn)
+      .subscribe((data) => (this.isLoggedIn = data));
+    return this.isLoggedIn;
+  }
 }

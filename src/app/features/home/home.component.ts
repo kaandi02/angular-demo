@@ -9,10 +9,8 @@ import { AppState } from '../../app.state';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  constructor(private router: ActivatedRoute,private store:Store<AppState>) {}
+  constructor(private router: ActivatedRoute, private store: Store<AppState>) {}
   ngOnInit() {
-   
-      
     this.router.fragment.subscribe((shop) => this.JumpToSection(shop));
   }
   JumpToSection(shop: string | null) {

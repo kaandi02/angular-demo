@@ -5,76 +5,53 @@
     justify-content: center;
     flex-direction: column;
 }
+
 #product-title {
     text-align: center;
     width: 90%;
-    
 }
 
-.select{
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-justify-content: flex-start;
-
+.select {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 #product1 h2 {
     font-size: 46px;
-
     color: #222;
     margin-top: 20px;
 }
+
 #sortSelect {
     font-size: 16px;
-    /* Example font size */
     padding: 8px;
-    /* Example padding */
     border: 1px solid #ccc;
-    /* Example border */
     border-radius: 4px;
-    /* Example border radius */
     width: 200px;
-    /* Example width */
 }
 
-/* Style the options inside the select */
+
 #sortSelect option {
     font-size: 14px;
-    /* Example font size */
     background-color: #fff;
-    /* Example background color */
     color: #333;
-    /* Example text color */
     padding: 8px;
-    /* Example padding */
 }
 
-/* Style the select when it is focused */
+
 #sortSelect:focus {
     outline: none;
-    /* Remove default focus outline */
     border-color: #007bff;
-    /* Example focus border color */
 }
+
 #product1 p {
     font-size: 16px;
     color: #465b52;
+}
 
-}
-@media only screen and (max-width:799px){
-    .pro{
-        min-width: 180px !important;
-    }
-    .button{
-        font-size: 10px;
-        text-align: left !important;
-        width:40% !important
-    }
-    #product1 h2{
-        font-size: 24px !important;
-    }
-}
+
 
 .pro {
     width: 23%;
@@ -90,9 +67,7 @@ justify-content: flex-start;
     text-align: left;
 }
 
-/* .pro:hover{
-     box-shadow: 20px 20px 30px rgba(0,0,0,0,06);
-} */
+
 .pro img {
     width: 100%;
     border-radius: 20px;
@@ -128,21 +103,6 @@ justify-content: flex-start;
 
 }
 
-.cart {
-    /* width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
-    background-color: #e8f6ea;
-
-    /* font-weight: 500;
-
-    border: 1px solid #cce7d0;
-    /* position: absolute; */
-    /* bottom: 20px;
-    right: 10px;  */
-}
-
 .pro i {
     font-size: 20px;
     position: absolute;
@@ -155,26 +115,39 @@ justify-content: flex-start;
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 20px;
-
     padding: 20px;
     margin-left: 20px;
 }
 
 .button {
-
     width: 30%;
     color: white;
     background-color: rgb(0, 98, 98);
     border: none;
     border-radius: 10px;
-
     padding: 10px;
     margin-bottom: 20px;
-
     text-align: center;
 
 }
 
 .button:hover {
     cursor: pointer;
+}
+
+@media only screen and (max-width:799px) {
+    .pro {
+        min-width: 180px !important;
+        width: 100% !important;
+    }
+
+    .button {
+        font-size: 10px;
+        text-align: left !important;
+        width: 40% !important
+    }
+
+    #product1 h2 {
+        font-size: 24px !important;
+    }
 }

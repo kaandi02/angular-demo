@@ -8,6 +8,5 @@ export const initialstate: productsState = {
 export interface productsState {
   products: featuredProducts[] | null;
   error: string | null;
-
-  filteredProducts: featuredProducts[] | null |undefined ;
+  filteredProducts: featuredProducts[] | null | undefined;
 }

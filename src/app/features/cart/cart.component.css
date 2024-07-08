@@ -85,19 +85,20 @@ td button:hover {
         font-weight: bold;
         text-align: left;
     }
-        
-    
-            #subtotal {
-                width: 70%;
-                margin-left: 10%;
-            }
-            #subtotal table{
-                    width: 250px !important;
-            }
-            #subtotal button{
-                width: 120px !important;
-            }
-        
+   
+    #subtotal {
+        width: 70%;
+        margin-left: 10%;
+    }
+
+    #subtotal table {
+        width: 250px !important;
+    }
+
+    #subtotal button {
+        width: 120px !important;
+    }
+
 }
 
 #subtotal {
@@ -133,8 +134,6 @@ td button:hover {
 .no-fav-content {
     text-align: center;
     padding: 50px;
-
-
     margin: 20px 0;
 }
 

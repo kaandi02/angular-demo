@@ -1,21 +1,21 @@
 <div id="product1">
     <div id="product-title">
-    <h2>Featured Products</h2>
-    <p>Summer Collection New Modern Design</p>
-    <div class="select">
-        <label>Sort by</label>
-    <select #sortSelect (change)="filterProducts(sortSelect.value)" id="sortSelect" >
-        <option value="default">None</option>
-        <option value="lowToHigh">Price: Low to High</option>
-        <option value="highToLow">Price: High to Low</option>
-        <option value="lessThan10">Price: Less than 10</option>
-        <option value="lessThan5">Price: Less than 5</option>
-        <option value="above10">Price: Above 10</option>
-        <option value="12plus">Price: 12+</option>
-    </select>
+        <h2>Featured Products</h2>
+        <p>Summer Collection New Modern Design</p>
+        <div class="select">
+            <label>Sort by</label>
+            <select #sortSelect (change)="filterProducts(sortSelect.value)" id="sortSelect">
+                <option value="default">None</option>
+                <option value="lowToHigh">Price: Low to High</option>
+                <option value="highToLow">Price: High to Low</option>
+                <option value="lessThan10">Price: Less than 10</option>
+                <option value="lessThan5">Price: Less than 5</option>
+                <option value="above10">Price: Above 10</option>
+                <option value="12plus">Price: 12+</option>
+            </select>
+        </div>
     </div>
-    </div>
-    
+
     <div class="pro-container">
         <div class="pro" *ngFor="let product of products$ | async">
             <img [src]="product.image" [routerLink]="'/products/'+product.id" />
@@ -29,15 +29,9 @@
                     </ng-container>
                 </div>
                 <h4>${{product.price}}</h4>
-
             </div>
-            <button class="button" (click)="toggleFav(product)">Wishlist
-            </button>
+            <button class="button" (click)="toggleFav(product)">Wishlist</button>
             <i class="fas fa-shopping-cart" (click)="addToCart(product,1)"></i>
-
-
-
-
         </div>
     </div>
 </div>

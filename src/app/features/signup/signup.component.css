@@ -70,14 +70,11 @@
     color: #fff;
     background: rgb(29, 120, 255);
     font-size: 1.2rem;
-
     font-weight: 500;
     letter-spacing: 1px;
     margin-top: 1rem;
     cursor: pointer;
-
-    transition: 0.4s;
-
+    transition: 0.4s
 }
 
 .button:hover {
@@ -87,7 +84,6 @@
 .signup {
     font-size: 17px;
     text-align: center;
-
 }
 
 .signup label {
@@ -99,9 +95,7 @@
     font-size: 15px;
     color: rgb(29, 120, 255);
     margin-top: 0;
-
     margin-bottom: 1.2rem;
-
 }
 
 .disabled {
@@ -116,12 +110,10 @@
     color: #fff;
     background: rgb(156, 188, 235);
     font-size: 1.2rem;
-
     font-weight: 500;
     letter-spacing: 1px;
     margin-top: 1rem;
     cursor: pointer;
-
     transition: 0.4s;
 
 }

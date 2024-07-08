@@ -43,7 +43,8 @@ export const productsReducer = createReducer(
     };
   }),
   on(filterProductsByPrice, (state, action) => {
-    let filteredProducts: featuredProducts[] | null | undefined = state.products;
+    let filteredProducts: featuredProducts[] | null | undefined =
+      state.products;
 
     switch (action.filterOption) {
       case 'lowToHigh':

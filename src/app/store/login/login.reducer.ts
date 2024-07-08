@@ -22,9 +22,7 @@ export const _loginReducer = createReducer(
   on(getUser, (state, action) => {
     return {
       ...state,
-      user:action.user
-    }
-  }
-  )
-)
-//this.store.dispatch(loginAction());//,private store:Store<{login:LoginState}>
+      user: action.user,
+    };
+  })
+);

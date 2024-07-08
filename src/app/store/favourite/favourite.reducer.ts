@@ -12,13 +12,8 @@ export const favouriteReducer = createReducer(
       alert('Product already in your wishlist');
       return state;
     }
-    
-
-   
-
     const updatedProducts = [...state.products, action.product];
     console.log(updatedProducts);
-
     return {
       ...state,
       products: updatedProducts,
@@ -31,14 +26,5 @@ export const favouriteReducer = createReducer(
       ...state,
       products:product
     }
-  //   const updatedProducts = state.products.map((product) =>
-  //     product.id === action.product.id
-  //       ? { ...product, isFav: !product.isFav }
-  //       : product
-  //   );
-  //   return {
-  //     ...state,
-  //     products: updatedProducts.filter((p) => p.id !== action.product.id),
-  //   };
   })
 );

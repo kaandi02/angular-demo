@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { User } from '../../models/User';
 import { AppState } from '../../app.state';
 import { getUser, loginAction } from '../../store/login/login.actions';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,11 @@ import { getUser, loginAction } from '../../store/login/login.actions';
 })
 export class LoginComponent {
   loginForm!: FormGroup;
-  constructor(private router: Router, private store: Store<AppState>) {}
+  constructor(
+    private router: Router,
+    private store: Store<AppState>,
+    private snackBar: MatSnackBar
+  ) {}
   ngOnInit() {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -46,14 +51,24 @@ export class LoginComponent {
       if (foundUser.password === loginUser.password) {
         const user = foundUser.email;
         this.store.dispatch(loginAction());
-        this.store.dispatch(getUser({user}))
-        this.router.navigate(['/']);
-        alert('You have logged in successfully!');
+        this.store.dispatch(getUser({ user }));
+        this.snackBar
+          .open('Login to continue', 'Close', {
+            duration: 5000,
+          })
+          .afterDismissed()
+          .subscribe(() => {
+            this.router.navigate(['/']);
+          });
       } else {
-        alert('Incorrect password. Please try again.');
+        this.snackBar.open('Incorrect password. Please try again.', 'Close', {
+          duration: 5000,
+        });
       }
     } else {
-      alert('User not found. Sign up to continue.');
+      this.snackBar.open('User not found. Sign up to continue.', 'Close', {
+        duration: 5000,
+      });
     }
 
     this.loginForm.reset();

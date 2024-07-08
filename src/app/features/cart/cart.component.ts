@@ -1,19 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-
-import { map, Observable, of, Subscription } from 'rxjs';
-
+import { map, Observable } from 'rxjs';
 import { featuredProducts } from '../../models/FeaturedProducts';
 import { AppState } from '../../app.state';
-import {
-  cartAction,
-  quantityAction,
-  removeCart,
-  totalQuantity,
-} from '../../store/cart/cart.actions';
+import { quantityAction, removeCart } from '../../store/cart/cart.actions';
 import { getCartItems } from '../../store/cart/cart.selector';
-import { CartState } from '../../store/cart/cart.state';
 import axios from 'axios';
 
 @Component({
@@ -27,10 +19,12 @@ export class CartComponent {
   totalPrice!: number | undefined;
   totalQuantity!: number | undefined;
   constructor(private store: Store<AppState>, private router: Router) {
-    this.store.select(getCartItems).subscribe(products => this.products = products);
+    this.store
+      .select(getCartItems)
+      .subscribe((products) => (this.products = products));
     console.log(this.products);
     this.product$ = this.store.select(getCartItems);
-    console.log(this.product$)
+    console.log(this.product$);
     this.product$
       .pipe(
         map((products) => {
@@ -74,31 +68,29 @@ export class CartComponent {
       quantityAction({ id: product.id, value: updatedQuantity })
     );
   }
- 
 
   ngOnInit() {}
   async checkout() {
-    const stripeid=this.products?.map(product => {
+    const stripeid = this.products?.map((product) => {
       return {
         price: product.stripeid,
-        quantity:product.quantity
-      }
-    })
+        quantity: product.quantity,
+      };
+    });
     const req = {
-      line_items:stripeid ,
+      line_items: stripeid,
       mode: 'payment',
       success_url: 'http://localhost:4200',
       cancel_url: 'http://localhost:4200',
     };
-    await axios.post('http://localhost:4242/create-checkout-session/', req, {
-      headers:{
-        'Content-Type' : 'application/json',
-        'Accept' : '*/*',
-        'Access-Control-Allow-Origin' : '*'
-    }
-  }).then((response)=>
-    window.location.href=response.data
-  );
+    await axios
+      .post('http://localhost:4242/create-checkout-session/', req, {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: '*/*',
+          'Access-Control-Allow-Origin': '*',
+        },
+      })
+      .then((response) => (window.location.href = response.data));
   }
-
 }

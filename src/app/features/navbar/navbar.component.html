@@ -43,50 +43,50 @@
         </ul>
     </div>
 
-   
+
     <div class="hamburger" (click)="toggleSidebar()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
 
-   
+
     <div class="sidebar" [ngClass]="{ 'open': sidebarOpen }">
-    <div id="links">
-        <ul id="navbar_hamburger" >
-            <li>
-                <a href="" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-                    fragment="home">Home</a>
-            </li>
-            <li><a href="" routerLink="/" fragment="shop">Shop</a></li>
-    
-            <li class="cart">
-                <a href="" [routerLink]="'/cart'" routerLinkActive="active">
-                    <div class="items">
-                        <span *ngIf="cartItems.length > 0" class="one"></span>
-                        <i class="fas fa-cart-shopping"></i>
-                    </div>
-                </a>
-            </li>
-    
-            <li class="cart">
-                <a href="" [routerLink]="'/favourite'" routerLinkActive="active">
-                    <div class="items">
-                        <span *ngIf="favItems.length > 0" class="one"></span>
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                </a>
-            </li>
-    
-            <ng-container *ngIf="!isLoggedin; else loggedIn">
-                <li><a href="" [routerLink]="'/login'" routerLinkActive="active">Login</a></li>
-                <li><a href="" [routerLink]="'/signup'" routerLinkActive="active">Signup</a></li>
-            </ng-container>
-    
-            <ng-template #loggedIn>
-                <li><a href="" (click)="onlogout()" routerLinkActive="active">Logout</a></li>
-            </ng-template>
-        </ul>
-    </div>
+        <div id="links">
+            <ul id="navbar_hamburger">
+                <li>
+                    <a href="" [routerLink]="['/']" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }" fragment="home">Home</a>
+                </li>
+                <li><a href="" routerLink="/" fragment="shop">Shop</a></li>
+
+                <li class="cart">
+                    <a href="" [routerLink]="'/cart'" routerLinkActive="active">
+                        <div class="items">
+                            <span *ngIf="cartItems.length > 0" class="one"></span>
+                            <i class="fas fa-cart-shopping"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="cart">
+                    <a href="" [routerLink]="'/favourite'" routerLinkActive="active">
+                        <div class="items">
+                            <span *ngIf="favItems.length > 0" class="one"></span>
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                    </a>
+                </li>
+
+                <ng-container *ngIf="!isLoggedin; else loggedIn">
+                    <li><a href="" [routerLink]="'/login'" routerLinkActive="active">Login</a></li>
+                    <li><a href="" [routerLink]="'/signup'" routerLinkActive="active">Signup</a></li>
+                </ng-container>
+
+                <ng-template #loggedIn>
+                    <li><a href="" (click)="onlogout()" routerLinkActive="active">Logout</a></li>
+                </ng-template>
+            </ul>
+        </div>
     </div>
 </div>

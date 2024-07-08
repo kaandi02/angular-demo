@@ -6,7 +6,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import {Observable} from 'rxjs';
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
   constructor(){}
@@ -14,7 +14,7 @@ export class ApiInterceptor implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    console.log("1", req);
+    // console.log("1", req);
     // const authToken = sessionStorage.getItem('uuid')
     
       
@@ -24,7 +24,7 @@ export class ApiInterceptor implements HttpInterceptor {
     
     );
       
-      console.log("2",modifiedReq)
+      // console.log("2",modifiedReq)
       return next.handle(modifiedReq)
   }
 }

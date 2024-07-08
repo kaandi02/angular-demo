@@ -1,21 +1,24 @@
-.error-container{
-    width:60%;
+.error-container {
+    width: 60%;
     height: auto;
     margin-top: 10%;
     margin-left: 18%;
     text-align: center;
 }
-h1{
 
-font-size: 80px;
-color:orangered;
-padding-bottom: 30px
+h1 {
+
+    font-size: 80px;
+    color: orangered;
+    padding-bottom: 30px
 }
-p{
+
+p {
     font-size: 30px;
     padding-bottom: 10px
 }
-a{
+
+a {
     text-decoration: none;
 
 }

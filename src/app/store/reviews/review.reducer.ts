@@ -1,6 +1,6 @@
-import { createReducer, on } from "@ngrx/store";
-import { addProductReview } from "./review.action";
-import { initialState } from "./review.state";
+import { createReducer, on } from '@ngrx/store';
+import { addProductReview } from './review.action';
+import { initialState } from './review.state';
 
 const _reviewReducer = createReducer(
   initialState,
@@ -13,6 +13,6 @@ const _reviewReducer = createReducer(
   }))
 );
 
-export function reviewReducer(state:any, action:any) {
+export function reviewReducer(state: any, action: any) {
   return _reviewReducer(state, action);
 }
