@@ -17,12 +17,12 @@ export class AppComponent {
     // var uuid = uuidv4();
     // console.log(uuid);
     // sessionStorage.setItem('uuid',uuid)
-     const loggedInUser = localStorage.getItem('loggedInUser');
-     if (loggedInUser) {
-       const user = JSON.parse(loggedInUser).user;
-       this.store.dispatch(loginAction());
-       this.store.dispatch(getUser({ user }));
-     }
+    //  const loggedInUser = localStorage.getItem('loggedInUser');
+    //  if (loggedInUser) {
+    //    const user = JSON.parse(loggedInUser).user;
+    //    this.store.dispatch(loginAction());
+    //    this.store.dispatch(getUser({ user }));
+    //  }
    
   }
   constructor(private store:Store<AppState>) {

@@ -7,7 +7,7 @@ import { featuredProducts } from '../models/FeaturedProducts';
   providedIn: 'root',
 })
 export class ProductsService {
-  private producturl = 'http://localhost:3000/products';
+  private producturl = 'http://localhost:4242/products';
 
   constructor(private http: HttpClient) {}
   getProducts(): Observable<featuredProducts[]> {
